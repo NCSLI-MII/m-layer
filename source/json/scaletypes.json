@@ -1,0 +1,14 @@
+[
+  {
+    "type": "bounded_interval"
+  },
+  {
+    "type": "interval"
+  },
+  {
+    "type": "prefixed_ratio"
+  },
+  {
+    "type": "ratio"
+  }
+]
