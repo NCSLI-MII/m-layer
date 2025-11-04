@@ -6,7 +6,7 @@
     "symbol": "Q",
     "numerator": "\"1E30\"",
     "denominator": "\"1\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/quetta"
   },
   {
     "id": "PR10",
@@ -15,7 +15,7 @@
     "symbol": "k",
     "numerator": "\"1000\"",
     "denominator": "\"1\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/kilo"
   },
   {
     "id": "PR11",
@@ -24,7 +24,7 @@
     "symbol": "h",
     "numerator": "\"100\"",
     "denominator": "\"1\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/hecto"
   },
   {
     "id": "PR12",
@@ -33,7 +33,7 @@
     "symbol": "da",
     "numerator": "\"10\"",
     "denominator": "\"1\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/deca"
   },
   {
     "id": "PR13",
@@ -42,7 +42,7 @@
     "symbol": "d",
     "numerator": "\"1\"",
     "denominator": "\"10\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/deci"
   },
   {
     "id": "PR14",
@@ -51,7 +51,7 @@
     "symbol": "c",
     "numerator": "\"1\"",
     "denominator": "\"100\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/centi"
   },
   {
     "id": "PR15",
@@ -60,16 +60,16 @@
     "symbol": "m",
     "numerator": "\"1\"",
     "denominator": "\"1000\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/milli"
   },
   {
     "id": "PR16",
     "ml_name": "pr_si_micro",
     "name": "micro",
-    "symbol": "µ",
+    "symbol": "\u00b5",
     "numerator": "\"1\"",
     "denominator": "\"1E6\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/micro"
   },
   {
     "id": "PR17",
@@ -78,7 +78,7 @@
     "symbol": "n",
     "numerator": "\"1\"",
     "denominator": "\"1E9\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/nano"
   },
   {
     "id": "PR18",
@@ -87,7 +87,7 @@
     "symbol": "p",
     "numerator": "\"1\"",
     "denominator": "\"1E12\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/pico"
   },
   {
     "id": "PR19",
@@ -96,7 +96,7 @@
     "symbol": "f",
     "numerator": "\"1\"",
     "denominator": "\"1E15\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/femto"
   },
   {
     "id": "PR2",
@@ -105,7 +105,7 @@
     "symbol": "R",
     "numerator": "\"1E27\"",
     "denominator": "\"1\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/ronna"
   },
   {
     "id": "PR20",
@@ -114,7 +114,7 @@
     "symbol": "a",
     "numerator": "\"1\"",
     "denominator": "\"1E18\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/atto"
   },
   {
     "id": "PR21",
@@ -123,7 +123,7 @@
     "symbol": "z",
     "numerator": "\"1\"",
     "denominator": "\"1E21\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/zepto"
   },
   {
     "id": "PR22",
@@ -132,7 +132,7 @@
     "symbol": "y",
     "numerator": "\"1\"",
     "denominator": "\"1E24\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/yocto"
   },
   {
     "id": "PR23",
@@ -141,7 +141,7 @@
     "symbol": "r",
     "numerator": "\"1\"",
     "denominator": "\"1E27\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/ronto"
   },
   {
     "id": "PR24",
@@ -150,7 +150,7 @@
     "symbol": "q",
     "numerator": "\"1\"",
     "denominator": "\"1E30\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/quecto"
   },
   {
     "id": "PR25",
@@ -159,7 +159,7 @@
     "symbol": "Q",
     "numerator": "\"1E27\"",
     "denominator": "\"1\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/quetta"
   },
   {
     "id": "PR26",
@@ -168,7 +168,7 @@
     "symbol": "R",
     "numerator": "\"1E24\"",
     "denominator": "\"1\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/ronna"
   },
   {
     "id": "PR27",
@@ -177,7 +177,7 @@
     "symbol": "Y",
     "numerator": "\"1E21\"",
     "denominator": "\"1\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/yotta"
   },
   {
     "id": "PR28",
@@ -186,7 +186,7 @@
     "symbol": "Z",
     "numerator": "\"1E18\"",
     "denominator": "\"1\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/zetta"
   },
   {
     "id": "PR29",
@@ -195,7 +195,7 @@
     "symbol": "E",
     "numerator": "\"1E15\"",
     "denominator": "\"1\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/exa"
   },
   {
     "id": "PR3",
@@ -204,7 +204,7 @@
     "symbol": "Y",
     "numerator": "\"1E24\"",
     "denominator": "\"1\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/yotta"
   },
   {
     "id": "PR30",
@@ -213,7 +213,7 @@
     "symbol": "P",
     "numerator": "\"1E12\"",
     "denominator": "\"1\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/peta"
   },
   {
     "id": "PR31",
@@ -222,7 +222,7 @@
     "symbol": "T",
     "numerator": "\"1E9\"",
     "denominator": "\"1\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/tera"
   },
   {
     "id": "PR32",
@@ -231,7 +231,7 @@
     "symbol": "G",
     "numerator": "\"1E6\"",
     "denominator": "\"1\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/giga"
   },
   {
     "id": "PR33",
@@ -240,7 +240,7 @@
     "symbol": "M",
     "numerator": "\"1E3\"",
     "denominator": "\"1\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/mega"
   },
   {
     "id": "PR34",
@@ -249,7 +249,7 @@
     "symbol": "k",
     "numerator": "\"1\"",
     "denominator": "\"1\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/kilo"
   },
   {
     "id": "PR35",
@@ -258,7 +258,7 @@
     "symbol": "h",
     "numerator": "\"1\"",
     "denominator": "\"10\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/hecto"
   },
   {
     "id": "PR36",
@@ -267,7 +267,7 @@
     "symbol": "da",
     "numerator": "\"1\"",
     "denominator": "\"100\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/deca"
   },
   {
     "id": "PR37",
@@ -276,7 +276,7 @@
     "symbol": "d",
     "numerator": "\"1\"",
     "denominator": "\"1E4\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/deci"
   },
   {
     "id": "PR38",
@@ -285,7 +285,7 @@
     "symbol": "c",
     "numerator": "\"1\"",
     "denominator": "\"1E5\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/centi"
   },
   {
     "id": "PR39",
@@ -294,7 +294,7 @@
     "symbol": "m",
     "numerator": "\"1\"",
     "denominator": "\"1E6\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/milli"
   },
   {
     "id": "PR4",
@@ -303,16 +303,16 @@
     "symbol": "Z",
     "numerator": "\"1E21\"",
     "denominator": "\"1\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/zetta"
   },
   {
     "id": "PR40",
     "ml_name": "pr_si_kg_micro",
     "name": "micro",
-    "symbol": "u",
+    "symbol": "\u00b5",
     "numerator": "\"1\"",
     "denominator": "\"1E9\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/micro"
   },
   {
     "id": "PR41",
@@ -321,7 +321,7 @@
     "symbol": "n",
     "numerator": "\"1\"",
     "denominator": "\"1E12\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/nano"
   },
   {
     "id": "PR42",
@@ -330,7 +330,7 @@
     "symbol": "p",
     "numerator": "\"1\"",
     "denominator": "\"1E15\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/pico"
   },
   {
     "id": "PR43",
@@ -339,7 +339,7 @@
     "symbol": "f",
     "numerator": "\"1\"",
     "denominator": "\"1E18\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/femto"
   },
   {
     "id": "PR44",
@@ -348,7 +348,7 @@
     "symbol": "a",
     "numerator": "\"1\"",
     "denominator": "\"1E21\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/atto"
   },
   {
     "id": "PR45",
@@ -357,7 +357,7 @@
     "symbol": "z",
     "numerator": "\"1\"",
     "denominator": "\"1E24\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/zepto"
   },
   {
     "id": "PR46",
@@ -366,7 +366,7 @@
     "symbol": "y",
     "numerator": "\"1\"",
     "denominator": "\"1E27\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/yocto"
   },
   {
     "id": "PR47",
@@ -375,7 +375,7 @@
     "symbol": "r",
     "numerator": "\"1\"",
     "denominator": "\"1E30\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/ronto"
   },
   {
     "id": "PR48",
@@ -384,7 +384,7 @@
     "symbol": "q",
     "numerator": "\"1\"",
     "denominator": "\"1E33\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/quecto"
   },
   {
     "id": "PR5",
@@ -393,7 +393,7 @@
     "symbol": "E",
     "numerator": "\"1E18\"",
     "denominator": "\"1\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/exa"
   },
   {
     "id": "PR6",
@@ -402,7 +402,7 @@
     "symbol": "P",
     "numerator": "\"1E15\"",
     "denominator": "\"1\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/peta"
   },
   {
     "id": "PR7",
@@ -411,7 +411,7 @@
     "symbol": "T",
     "numerator": "\"1E12\"",
     "denominator": "\"1\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/tera"
   },
   {
     "id": "PR8",
@@ -420,7 +420,7 @@
     "symbol": "G",
     "numerator": "\"1E9\"",
     "denominator": "\"1\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/giga"
   },
   {
     "id": "PR9",
@@ -429,6 +429,6 @@
     "symbol": "M",
     "numerator": "\"1E6\"",
     "denominator": "\"1\"",
-    "reference": null
+    "reference": "https://si-digital-framework.org/SI/prefixes/mega"
   }
 ]
