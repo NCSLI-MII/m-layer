@@ -9,15 +9,14 @@
 Utility to obtain mlayer from api
 """
 import json
-import uuid
 import requests
-from pathlib import Path
+
 
 class MLayerCollections:
 
     def __init__(self, doapi=True):
         # self._path_root = get_project_root()
-        self._api = "https://api.mlayer.org" 
+        self._api = "https://api.mlayer.org"
         self._doapi = doapi
         self._output = '/tmp/mlayer'
 
@@ -36,25 +35,25 @@ class MLayerCollections:
                 'conversions': self._transformConversions,
                 'casts': self._transformCasts
                 }
-    
+
     def _transformPrefix(self):
         pass
-    
+
     def _transformSystem(self):
         pass
-    
+
     def _transformDimension(self):
         pass
-    
+
     def _transformAspect(self):
         pass
-    
+
     def _transformUnit(self):
         pass
-    
+
     def _transformScale(self):
         pass
-    
+
     def _transformFunction(self):
         pass
 
@@ -66,13 +65,13 @@ class MLayerCollections:
 
     def _transformCasts(self):
         pass
-    
+
     def _storeCollection(self, type_, lst):
         filename = f'{self._output}/{type_}.json'
         with open(filename, 'w') as json_file:
             json.dump(lst, json_file, indent=2)
         print(f'API response saved to {filename}')
-    
+
     def getCollections(self):
         for collection in self._transform.keys():
             print(collection)

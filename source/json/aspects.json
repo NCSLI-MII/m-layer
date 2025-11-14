@@ -322,6 +322,13 @@
     "reference": "https://si-digital-framework.org/quantities/PRES"
   },
   {
+    "id": "AS140",
+    "ml_name": "as_heat-available_energy",
+    "name": "Heat - available energy ",
+    "symbol": null,
+    "reference": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9#HEAT"
+  },
+  {
     "id": "AS142",
     "ml_name": "as_volume_content",
     "name": "volume content",
@@ -1095,13 +1102,6 @@
     "id": "AS85",
     "ml_name": "as_linear_expansion_coefficient",
     "name": "linear expansion coefficient",
-    "symbol": null,
-    "reference": "NIST Special Publication 1038"
-  },
-  {
-    "id": "AS86",
-    "ml_name": "as_coefficient_of_heat_transfer",
-    "name": "coefficient of heat transfer",
     "symbol": null,
     "reference": "NIST Special Publication 1038"
   },

@@ -432,14 +432,6 @@
     "parameters": "{}"
   },
   {
-    "src_scale_id": "SC57",
-    "src_aspect_id": "AS1",
-    "dst_scale_id": "SC42",
-    "dst_aspect_id": "AS30",
-    "function_id": "FN1",
-    "parameters": "{}"
-  },
-  {
     "src_scale_id": "SC58",
     "src_aspect_id": "AS1",
     "dst_scale_id": "SC28",
