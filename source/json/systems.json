@@ -8,6 +8,14 @@
     "reference": "https://www.bipm.org/en/publications/si-brochure/"
   },
   {
+    "id": "SY2",
+    "ml_name": "any_system",
+    "symbol": "xx",
+    "n": null,
+    "basis": null,
+    "reference": null
+  },
+  {
     "id": "SY5",
     "ml_name": "inch-pound",
     "symbol": "ip",
