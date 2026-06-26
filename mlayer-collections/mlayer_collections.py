@@ -10,15 +10,15 @@ Utility to obtain mlayer from api
 """
 import json
 import requests
-
+import sys
 
 class MLayerCollections:
 
-    def __init__(self, doapi=True):
+    def __init__(self, doapi=True, path='/tmp/mlayer'):
         # self._path_root = get_project_root()
         self._api = "https://api.mlayer.org"
         self._doapi = doapi
-        self._output = '/tmp/mlayer'
+        self._output = path
 
         # Ordered list of transform to run
         # Defines the loading order needed to establish object relations
@@ -83,3 +83,15 @@ class MLayerCollections:
             print(response.status_code)
             if response.status_code == 200:
                 self._storeCollection(type_, response.json())
+
+if __name__ == "__main__":
+    path = '/tmp/mlayer'
+    if len(sys.argv) > 1:
+        path = argv[1]
+        print(f"Argument output path: {argument}")
+    else:
+        print(f"Output path: {path}")
+
+    collections = MLayerCollections(doapi=True, path=path)
+    collections.getCollections()
+

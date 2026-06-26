@@ -282,6 +282,18 @@
     "exponents": "[1,0,1,1,0,0,0]"
   },
   {
+    "id": "DI141",
+    "formal_system_id": "SY1",
+    "systematic_scale_id": "SC1285",
+    "exponents": "[0,0,1,0,0,1,0]"
+  },
+  {
+    "id": "DI142",
+    "formal_system_id": "SY1",
+    "systematic_scale_id": "SC1299",
+    "exponents": "[-2,-1,3,0,0,1,0]"
+  },
+  {
     "id": "DI15",
     "formal_system_id": "SY1",
     "systematic_scale_id": "SC50",
@@ -303,7 +315,7 @@
     "id": "DI18",
     "formal_system_id": "SY1",
     "systematic_scale_id": "SC53",
-    "exponents": "[-2,-1,3,2,0,0 0]"
+    "exponents": "[-2,-1,3,2,0,0,0]"
   },
   {
     "id": "DI19",
@@ -333,7 +345,7 @@
     "id": "DI22",
     "formal_system_id": "SY1",
     "systematic_scale_id": "SC57",
-    "exponents": "[-2,0,0,0,0,0,1]"
+    "exponents": "[-2,0,0,0,0,1,0]"
   },
   {
     "id": "DI23",
