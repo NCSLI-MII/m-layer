@@ -1,1070 +1,1992 @@
 [
   {
-    "id": "AS1",
-    "name": "null",
-    "symbol": null,
-    "reference": null
-  },
-  {
     "id": "AS10",
     "name": "plane angle",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ANGP"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ANGP"
+    ],
+    "symbol": null
   },
   {
     "id": "AS100",
     "name": "period",
-    "symbol": null,
-    "reference": "https://doi.org/10.1351/goldbook.P04493"
+    "sources": [
+      "https://doi.org/10.1351/goldbook.P04493"
+    ],
+    "symbol": null
   },
   {
     "id": "AS101",
     "name": "thermodynamic temperature",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/TEMT"
+    "sources": [
+      "https://si-digital-framework.org/quantities/TEMT"
+    ],
+    "symbol": null
   },
   {
     "id": "AS102",
     "name": "thermodynamic temperature difference",
-    "symbol": null,
-    "reference": null
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS103",
     "name": "energy flux density",
-    "symbol": null,
-    "reference": "https://doi.org/10.1351/goldbook.E02106"
+    "sources": [
+      "https://doi.org/10.1351/goldbook.E02106"
+    ],
+    "symbol": null
   },
   {
     "id": "AS104",
     "name": "ITS90",
-    "symbol": null,
-    "reference": null
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS105",
     "name": "ITS90 difference",
-    "symbol": null,
-    "reference": null
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS106",
     "name": "mass concentration",
-    "symbol": "\\gamma",
-    "reference": "https://si-digital-framework.org/quantities/MACO"
+    "sources": [
+      "https://si-digital-framework.org/quantities/MACO"
+    ],
+    "symbol": "\\gamma"
   },
   {
     "id": "AS107",
     "name": "dynamic viscosity",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/DYVI"
+    "sources": [
+      "https://si-digital-framework.org/quantities/DYVI"
+    ],
+    "symbol": null
   },
   {
     "id": "AS108",
     "name": "thermal conductivity",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/TCON"
+    "sources": [
+      "https://si-digital-framework.org/quantities/TCON"
+    ],
+    "symbol": null
   },
   {
     "id": "AS109",
     "name": "luminance",
-    "symbol": "L_\\mathrm{V}",
-    "reference": "https://cie.co.at/eilvterm/17-21-050"
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-050",
+      "The CIE system of physical photometry (ISO/CIE 23539:2023)"
+    ],
+    "symbol": "L_\\mathrm{V}"
   },
   {
     "id": "AS11",
     "name": "solid angle",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ANGS"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ANGS"
+    ],
+    "symbol": null
   },
   {
     "id": "AS110",
     "name": "relative humidity",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/RHUM"
+    "sources": [
+      "https://si-digital-framework.org/quantities/RHUM"
+    ],
+    "symbol": null
   },
   {
     "id": "AS111",
     "name": "radiant exitance",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/EXIT"
+    "sources": [
+      "https://si-digital-framework.org/quantities/EXIT"
+    ],
+    "symbol": "M_\\mathrm{e}"
   },
   {
     "id": "AS112",
-    "name": "fluence",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/FLUE"
+    "name": "radiant fluence",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-074"
+    ],
+    "symbol": "H_{\\mathrm{e},\\mathrm{o}}"
   },
   {
     "id": "AS113",
     "name": "fluence rate",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/FLUR"
+    "sources": [
+      "https://si-digital-framework.org/quantities/FLUR"
+    ],
+    "symbol": null
   },
   {
     "id": "AS114",
     "name": "number",
-    "symbol": null,
-    "reference": ""
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS115",
     "name": "kerma rate",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/KRMR"
+    "sources": [
+      "https://si-digital-framework.org/quantities/KRMR"
+    ],
+    "symbol": null
   },
   {
     "id": "AS116",
     "name": "magnetic polarization",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/MGPO"
+    "sources": [
+      "https://si-digital-framework.org/quantities/MGPO"
+    ],
+    "symbol": null
   },
   {
     "id": "AS117",
     "name": "magnetic susceptibility",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/MGSU"
+    "sources": [
+      "https://si-digital-framework.org/quantities/MGSU"
+    ],
+    "symbol": null
   },
   {
     "id": "AS118",
     "name": "emittance",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/OPEM"
+    "sources": [
+      "https://si-digital-framework.org/quantities/OPEM"
+    ],
+    "symbol": null
   },
   {
     "id": "AS119",
     "name": "PLTS-2000 temperature",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/PLTS"
+    "sources": [
+      "https://si-digital-framework.org/quantities/PLTS"
+    ],
+    "symbol": null
   },
   {
     "id": "AS12",
     "name": "frequency",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/FREQ"
+    "sources": [
+      "https://si-digital-framework.org/quantities/FREQ"
+    ],
+    "symbol": null
   },
   {
     "id": "AS120",
     "name": "quality factor",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/QFAC"
+    "sources": [
+      "https://si-digital-framework.org/quantities/QFAC"
+    ],
+    "symbol": null
   },
   {
     "id": "AS121",
     "name": "refractive index",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/REFI"
+    "sources": [
+      "https://cie.co.at/eilvterm/17-24-109"
+    ],
+    "symbol": "n"
   },
   {
     "id": "AS122",
     "name": "relative permittivity",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/RELP"
+    "sources": [
+      "https://si-digital-framework.org/quantities/RELP"
+    ],
+    "symbol": null
   },
   {
     "id": "AS123",
     "name": "relative permeability",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/REPE"
+    "sources": [
+      "https://si-digital-framework.org/quantities/REPE"
+    ],
+    "symbol": null
   },
   {
     "id": "AS124",
     "name": "thermal expansion coefficient linear",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/TEXL"
+    "sources": [
+      "https://si-digital-framework.org/quantities/TEXL"
+    ],
+    "symbol": null
   },
   {
     "id": "AS125",
     "name": "loss attenuation",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/LOSS"
+    "sources": [
+      "https://si-digital-framework.org/quantities/LOSS"
+    ],
+    "symbol": null
   },
   {
     "id": "AS126",
     "name": "sound intensity",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/SOIN"
+    "sources": [
+      "https://si-digital-framework.org/quantities/SOIN"
+    ],
+    "symbol": null
   },
   {
     "id": "AS127",
     "name": "second moment of area",
-    "symbol": null,
-    "reference": "NIST SP-811"
+    "sources": [
+      "NIST SP-811"
+    ],
+    "symbol": null
   },
   {
     "id": "AS128",
     "name": "heat density",
-    "symbol": null,
-    "reference": "NIST SP-811"
+    "sources": [
+      "NIST SP-811"
+    ],
+    "symbol": null
   },
   {
     "id": "AS129",
     "name": "fuel consumption",
-    "symbol": null,
-    "reference": "NIST SP-811"
+    "sources": [
+      "NIST SP-811"
+    ],
+    "symbol": null
   },
   {
     "id": "AS13",
     "name": "force",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/FORC"
+    "sources": [
+      "https://si-digital-framework.org/quantities/FORC"
+    ],
+    "symbol": null
   },
   {
     "id": "AS130",
     "name": "heat flow rate",
-    "symbol": null,
-    "reference": "NIST SP-811"
+    "sources": [
+      "NIST SP-811"
+    ],
+    "symbol": null
   },
   {
     "id": "AS131",
     "name": "thermal insulance",
-    "symbol": null,
-    "reference": "NIST SP-811"
+    "sources": [
+      "NIST SP-811"
+    ],
+    "symbol": null
   },
   {
     "id": "AS132",
     "name": "thermal resistivity",
-    "symbol": null,
-    "reference": "NIST SP-811"
+    "sources": [
+      "NIST SP-811"
+    ],
+    "symbol": null
   },
   {
     "id": "AS133",
     "name": "linear density",
-    "symbol": null,
-    "reference": "NIST SP-811"
+    "sources": [
+      "NIST SP-811"
+    ],
+    "symbol": null
   },
   {
     "id": "AS134",
     "name": "mass flow rate",
-    "symbol": null,
-    "reference": "https://doi.org/10.1351/goldbook.M03720"
+    "sources": [
+      "https://doi.org/10.1351/goldbook.M03720"
+    ],
+    "symbol": null
   },
   {
     "id": "AS135",
-    "name": "mass fraction",
-    "symbol": "w",
-    "reference": "https://doi.org/10.1351/goldbook.M03722"
+    "name": "mass ratio",
+    "sources": [
+      "https://doi.org/10.1351/goldbook.15337",
+      "https://doi.org/10.1351/goldbook.M03722"
+    ],
+    "symbol": null
   },
   {
     "id": "AS136",
-    "name": "volume fraction",
-    "symbol": "\\varpsi",
-    "reference": "https://doi.org/10.1351/goldbook.M03722"
+    "name": "volume ratio",
+    "sources": [
+      "https://doi.org/10.1351/goldbook.M03722"
+    ],
+    "symbol": null
   },
   {
     "id": "AS137",
-    "name": "amount of substance fraction",
-    "symbol": "x",
-    "reference": "https://doi.org/10.1351/goldbook.A00299"
+    "name": "amount of substance ratio",
+    "sources": [
+      "https://doi.org/10.1351/goldbook.A00299",
+      "https://doi.org/10.1351/goldbook.15341"
+    ],
+    "symbol": null
   },
   {
     "id": "AS138",
     "name": "volume concentration",
-    "symbol": "\\sigma",
-    "reference": "https://doi.org/10.1351/goldbook.C01222"
+    "sources": [
+      "https://doi.org/10.1351/goldbook.C01222"
+    ],
+    "symbol": "\\sigma"
   },
   {
     "id": "AS139",
     "name": "molality",
-    "symbol": "b",
-    "reference": "https://doi.org/10.1351/goldbook.M03970"
+    "sources": [
+      "https://doi.org/10.1351/goldbook.M03970"
+    ],
+    "symbol": "b"
   },
   {
     "id": "AS14",
     "name": "pressure",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/PRES"
+    "sources": [
+      "https://si-digital-framework.org/quantities/PRES"
+    ],
+    "symbol": null
   },
   {
     "id": "AS140",
     "name": "Heat - available energy ",
-    "symbol": null,
-    "reference": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9#HEAT"
+    "sources": [
+      "https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9#HEAT"
+    ],
+    "symbol": null
   },
   {
     "id": "AS141",
     "name": "luminous energy",
-    "symbol": "Q_\\mathrm{V}",
-    "reference": "https://cie.co.at/eilvterm/17-21-037"
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-037"
+    ],
+    "symbol": "Q_\\mathrm{V}"
   },
   {
     "id": "AS142",
     "name": "volume content",
-    "symbol": "\\kappa",
-    "reference": "https://doi.org/10.1351/goldbook.V06641"
+    "sources": [
+      "https://doi.org/10.1351/goldbook.V06641"
+    ],
+    "symbol": "\\kappa"
   },
   {
     "id": "AS143",
     "name": "substance content",
-    "symbol": "n",
-    "reference": "https://doi.org/10.1351/goldbook.S06073"
+    "sources": [
+      "https://doi.org/10.1351/goldbook.S06073"
+    ],
+    "symbol": "n"
   },
   {
     "id": "AS144",
     "name": "relative mass density",
-    "symbol": null,
-    "reference": "ISO 80000-4"
+    "sources": [
+      "ISO 80000-4"
+    ],
+    "symbol": null
   },
   {
     "id": "AS145",
     "name": "angular momentum",
-    "symbol": null,
-    "reference": "ISO 80000-4"
+    "sources": [
+      "ISO 80000-4"
+    ],
+    "symbol": null
   },
   {
     "id": "AS146",
     "name": "strain",
-    "symbol": null,
-    "reference": "ISO 80000-4"
+    "sources": [
+      "ISO 80000-4"
+    ],
+    "symbol": null
   },
   {
     "id": "AS147",
     "name": "efficiency",
-    "symbol": null,
-    "reference": "ISO 80000-4"
+    "sources": [
+      "ISO 80000-4"
+    ],
+    "symbol": null
   },
   {
     "id": "AS148",
     "name": "thermal resistance",
-    "symbol": "R",
-    "reference": "https://doi.org/10.1351/goldbook.T06308"
+    "sources": [
+      "https://doi.org/10.1351/goldbook.T06308"
+    ],
+    "symbol": "R"
   },
   {
     "id": "AS149",
     "name": "thermal conductance",
-    "symbol": null,
-    "reference": "ISO 80000-5"
+    "sources": [
+      "ISO 80000-5"
+    ],
+    "symbol": null
   },
   {
     "id": "AS15",
     "name": "stress",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/STRE"
+    "sources": [
+      "https://si-digital-framework.org/quantities/STRE"
+    ],
+    "symbol": null
   },
   {
     "id": "AS150",
-    "name": "ratio mass",
-    "symbol": null,
-    "reference": null
+    "name": "logarithmic root-power ratio",
+    "sources": [
+      "ISO 80000-1"
+    ],
+    "symbol": null
   },
   {
     "id": "AS151",
-    "name": "ratio pressure",
-    "symbol": "",
-    "reference": null
+    "name": "pressure ratio ",
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS152",
     "name": "dew point",
-    "symbol": null,
-    "reference": "ISO 80000-5"
+    "sources": [
+      "ISO 80000-5"
+    ],
+    "symbol": null
   },
   {
     "id": "AS153",
-    "name": "ratio frequency",
-    "symbol": null,
-    "reference": null
-  },
-  {
-    "id": "AS154",
-    "name": "log ratio frequency ",
-    "symbol": null,
-    "reference": "ISO 80000-6"
+    "name": "frequency ratio",
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS155",
-    "name": "level power",
-    "symbol": null,
-    "reference": null
+    "name": "hydrogen-ion activity in aqueous solution",
+    "sources": [
+      "https://doi.org/10.1351/goldbook.P04524"
+    ],
+    "symbol": null
   },
   {
     "id": "AS156",
     "name": "level pressure",
-    "symbol": null,
-    "reference": null
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS157",
     "name": "radiant flux density",
-    "symbol": null,
-    "reference": "https://doi.org/10.1351/goldbook.08280"
+    "sources": [
+      "https://doi.org/10.1351/goldbook.08280"
+    ],
+    "symbol": null
   },
   {
     "id": "AS158",
     "name": "electric dipole moment",
-    "symbol": null,
-    "reference": "https://doi.org/10.1351/goldbook.E01929"
+    "sources": [
+      "https://doi.org/10.1351/goldbook.E01929"
+    ],
+    "symbol": null
   },
   {
     "id": "AS159",
     "name": "fluidity",
-    "symbol": null,
-    "reference": "https://doi.org/10.1351/goldbook.F02450"
+    "sources": [
+      "https://doi.org/10.1351/goldbook.F02450"
+    ],
+    "symbol": null
   },
   {
     "id": "AS16",
     "name": "energy",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ENGY"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ENGY"
+    ],
+    "symbol": null
   },
   {
     "id": "AS160",
     "name": "reciprocal specific energy",
-    "symbol": null,
-    "reference": null
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS161",
     "name": "water vapour permeability",
-    "symbol": null,
-    "reference": null
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS162",
     "name": "surface heat energy density",
-    "symbol": null,
-    "reference": null
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS163",
     "name": "kinematic diffusivity",
-    "symbol": null,
-    "reference": null
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS164",
     "name": "moment of force per length",
-    "symbol": null,
-    "reference": null
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS165",
     "name": "resistivity",
-    "symbol": null,
-    "reference": null
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS166",
     "name": "thermal impedance",
-    "symbol": null,
-    "reference": null
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS167",
     "name": "power density",
-    "symbol": null,
-    "reference": null
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS168",
     "name": "reciprocal length",
-    "symbol": null,
-    "reference": null
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS169",
     "name": "magnetomotive force",
-    "symbol": null,
-    "reference": null
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS17",
     "name": "work",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/WORK"
+    "sources": [
+      "https://si-digital-framework.org/quantities/WORK"
+    ],
+    "symbol": null
   },
   {
     "id": "AS170",
     "name": "linear mass flow rate",
-    "symbol": null,
-    "reference": null
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS171",
     "name": "water vapour permeance",
-    "symbol": null,
-    "reference": null
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS172",
     "name": "linear force density",
-    "symbol": null,
-    "reference": null
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS173",
     "name": "thrust to mass ratio",
-    "symbol": null,
-    "reference": null
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS174",
     "name": "surface energy density",
-    "symbol": null,
-    "reference": null
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS175",
     "name": "heat transfer coefficient",
-    "symbol": null,
-    "reference": null
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS176",
     "name": "electromotive force",
-    "symbol": null,
-    "reference": "https://doi.org/10.1351/goldbook.E01974"
+    "sources": [
+      "https://doi.org/10.1351/goldbook.E01974"
+    ],
+    "symbol": null
   },
   {
     "id": "AS177",
     "name": "activity",
-    "symbol": "a",
-    "reference": "https://goldbook.iupac.org/terms/view/A00115"
+    "sources": [
+      "https://doi.org/10.1351/goldbook.A00115"
+    ],
+    "symbol": "a"
   },
   {
     "id": "AS178",
     "name": "number concentration",
-    "symbol": "C",
-    "reference": "https://goldbook.iupac.org/terms/view/N04260"
+    "sources": [
+      "https://doi.org/10.1351/goldbook.N04260"
+    ],
+    "symbol": "C"
+  },
+  {
+    "id": "AS179",
+    "name": "luminance dose",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-068"
+    ],
+    "symbol": "L_\\mathrm{V,t}"
   },
   {
     "id": "AS18",
     "name": "amount of heat",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/HEQT"
+    "sources": [
+      "https://si-digital-framework.org/quantities/HEQT"
+    ],
+    "symbol": null
+  },
+  {
+    "id": "AS180",
+    "name": "luminous energy density",
+    "sources": [],
+    "symbol": "\\omega_\\mathrm{V}"
+  },
+  {
+    "id": "AS181",
+    "name": "radiant energy density",
+    "sources": [
+      "https://doi.org/10.1351/goldbook.R05040"
+    ],
+    "symbol": null
+  },
+  {
+    "id": "AS182",
+    "name": "spectral flux",
+    "sources": [],
+    "symbol": "\\Phi_{\\mathrm{e},\\nu}"
+  },
+  {
+    "id": "AS183",
+    "name": "spectral intensity",
+    "sources": [],
+    "symbol": "I_{\\mathrm{e},\\Omega,\\nu}"
+  },
+  {
+    "id": "AS184",
+    "name": "spectral radiance",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-052"
+    ],
+    "symbol": "L_{\\mathrm{e},\\Omega,\\nu}"
+  },
+  {
+    "id": "AS185",
+    "name": "spectral irradiance",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-054"
+    ],
+    "symbol": "E_{\\mathrm{e},\\nu}"
+  },
+  {
+    "id": "AS186",
+    "name": "radiant exposure",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-071"
+    ],
+    "symbol": "H_\\mathrm{e}"
+  },
+  {
+    "id": "AS187",
+    "name": "spectral exitance",
+    "sources": [],
+    "symbol": "M_{\\mathrm{e},\\nu}"
+  },
+  {
+    "id": "AS188",
+    "name": "spectral exposure",
+    "sources": [],
+    "symbol": "H_{\\mathrm{e},\\nu}"
+  },
+  {
+    "id": "AS189",
+    "name": "radiosity",
+    "sources": [],
+    "symbol": "J_\\mathrm{e}"
   },
   {
     "id": "AS19",
     "name": "power",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/POWR"
+    "sources": [
+      "https://si-digital-framework.org/quantities/POWR"
+    ],
+    "symbol": null
+  },
+  {
+    "id": "AS190",
+    "name": "spectral radiosity",
+    "sources": [],
+    "symbol": "J_{\\mathrm{e},\\nu}"
+  },
+  {
+    "id": "AS191",
+    "name": "luminous intensity per unit frequency",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-045"
+    ],
+    "symbol": "I_{\\mathrm{V},\\nu}"
+  },
+  {
+    "id": "AS192",
+    "name": "luminance per unit frequency",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-050"
+    ],
+    "symbol": "L_{\\mathrm{V},\\nu}"
+  },
+  {
+    "id": "AS193",
+    "name": "illuminance per unit frequency",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-060"
+    ],
+    "symbol": "E_{\\mathrm{V},\\nu}"
+  },
+  {
+    "id": "AS194",
+    "name": "spectral luminous efficacy",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-091"
+    ],
+    "symbol": "K(\\lambda)"
+  },
+  {
+    "id": "AS195",
+    "name": "luminous_exposure per unit frequency",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-072"
+    ],
+    "symbol": "H_{\\mathrm{V},\\nu}"
+  },
+  {
+    "id": "AS196",
+    "name": "luminous energy per unit frequency",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-037"
+    ],
+    "symbol": "Q_{\\mathrm{V},\\nu}"
+  },
+  {
+    "id": "AS197",
+    "name": "luminance dose per unit frequency",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-068"
+    ],
+    "symbol": "L_{\\mathrm{V,t},\\nu}"
+  },
+  {
+    "id": "AS198",
+    "name": "luminous exitance per unit frequency",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-081"
+    ],
+    "symbol": "M_{\\mathrm{V},\\nu}"
+  },
+  {
+    "id": "AS199",
+    "name": "luminous intensity per unit wavelength",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-045"
+    ],
+    "symbol": "I_{\\mathrm{V},\\lambda}"
   },
   {
     "id": "AS2",
     "name": "mass",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/MASS"
+    "sources": [
+      "https://si-digital-framework.org/quantities/MASS"
+    ],
+    "symbol": null
   },
   {
     "id": "AS20",
     "name": "radiant flux",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/RAFL"
+    "sources": [
+      "https://si-digital-framework.org/quantities/RAFL"
+    ],
+    "symbol": "P_\\mathrm{e}"
+  },
+  {
+    "id": "AS200",
+    "name": "luminous intensity per unit wavenumber",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-045"
+    ],
+    "symbol": "I_{\\mathrm{V},\\sigma}"
+  },
+  {
+    "id": "AS201",
+    "name": "luminance per unit wavelength",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-050"
+    ],
+    "symbol": "L_{\\mathrm{V},\\lambda}"
+  },
+  {
+    "id": "AS202",
+    "name": "luminance per unit wavenumber",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-050"
+    ],
+    "symbol": "L_{\\mathrm{V},\\sigma}"
+  },
+  {
+    "id": "AS203",
+    "name": "luminous flux per unit wavelength",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-039"
+    ],
+    "symbol": "\\Phi_{\\mathrm{V},\\lambda}"
+  },
+  {
+    "id": "AS204",
+    "name": "luminous flux per unit wavenumber",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-039"
+    ],
+    "symbol": "\\Phi_{\\mathrm{V},\\sigma}"
+  },
+  {
+    "id": "AS205",
+    "name": "spectral luminous efficiancy",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-035"
+    ],
+    "symbol": "V"
+  },
+  {
+    "id": "AS206",
+    "name": "radiant energy",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-041"
+    ],
+    "symbol": "Q_\\mathrm{e}"
+  },
+  {
+    "id": "AS207",
+    "name": "radiant flux per unit frequency",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-038"
+    ],
+    "symbol": "P_{\\mathrm{e},\\nu}"
+  },
+  {
+    "id": "AS208",
+    "name": "radiant flux per unit wavelength",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-038"
+    ],
+    "symbol": "P_{\\mathrm{e},\\lambda}"
+  },
+  {
+    "id": "AS209",
+    "name": "illuminance per unit wavelength",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-060"
+    ],
+    "symbol": "E_{\\mathrm{V},\\lambda}"
   },
   {
     "id": "AS21",
     "name": "electric charge",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ELCH"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ELCH"
+    ],
+    "symbol": null
+  },
+  {
+    "id": "AS210",
+    "name": "illuminance per unit wavenumber",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-060"
+    ],
+    "symbol": "E_{\\mathrm{V},\\sigma}"
+  },
+  {
+    "id": "AS211",
+    "name": "luminous_exposure per unit wavelength",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-072"
+    ],
+    "symbol": "H_{\\mathrm{V},\\lambda}"
+  },
+  {
+    "id": "AS212",
+    "name": "luminous_exposure per unit wavenumber",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-072"
+    ],
+    "symbol": "H_{\\mathrm{V},\\sigma}"
+  },
+  {
+    "id": "AS213",
+    "name": "luminous energy per unit wavelength",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-037"
+    ],
+    "symbol": "Q_{\\mathrm{V},\\lambda}"
+  },
+  {
+    "id": "AS214",
+    "name": "luminous energy per unit wavenumber",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-037"
+    ],
+    "symbol": "Q_{\\mathrm{V},\\sigma}"
+  },
+  {
+    "id": "AS215",
+    "name": "luminance dose per unit wavelength",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-068"
+    ],
+    "symbol": "L_{\\mathrm{V,t},\\lambda}"
+  },
+  {
+    "id": "AS216",
+    "name": "luminance dose per unit wavenumber",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-068"
+    ],
+    "symbol": "L_{\\mathrm{V,t},\\sigma}"
+  },
+  {
+    "id": "AS217",
+    "name": "luminous exitance per unit wavelength",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-081"
+    ],
+    "symbol": "M_{\\mathrm{V},\\lambda}"
+  },
+  {
+    "id": "AS218",
+    "name": "luminous exitance per unit wavenumber",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-081"
+    ],
+    "symbol": "M_{\\mathrm{V},\\sigma}"
+  },
+  {
+    "id": "AS219",
+    "name": "radiant flux per unit wavenumber",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-038"
+    ],
+    "symbol": "P_{\\mathrm{e},\\sigma}"
   },
   {
     "id": "AS22",
     "name": "electric potential",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ELPD"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ELPD"
+    ],
+    "symbol": null
+  },
+  {
+    "id": "AS220",
+    "name": "radiant intensity per unit frequency",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-044"
+    ],
+    "symbol": "I_{\\mathrm{e},\\nu}"
+  },
+  {
+    "id": "AS221",
+    "name": "radiant intensity per unit wavelength",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-044"
+    ],
+    "symbol": "I_{\\mathrm{e},\\lambda}"
+  },
+  {
+    "id": "AS222",
+    "name": "radiant intensity per unit wavenumber",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-044"
+    ],
+    "symbol": "I_{\\mathrm{e},\\sigma}"
+  },
+  {
+    "id": "AS223",
+    "name": "radiant exitance per unit frequency",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-080"
+    ],
+    "symbol": "M_{\\mathrm{e},\\nu}"
+  },
+  {
+    "id": "AS224",
+    "name": "radiant exitance per unit wavelength",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-080"
+    ],
+    "symbol": "M_{\\mathrm{e},\\lambda}"
+  },
+  {
+    "id": "AS225",
+    "name": "radiant exitance per unit wavenumber",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-080"
+    ],
+    "symbol": "M_{\\mathrm{e},\\sigma}"
+  },
+  {
+    "id": "AS226",
+    "name": "radiant energy per unit frequency",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-041"
+    ],
+    "symbol": "Q_{\\mathrm{e},\\nu}"
+  },
+  {
+    "id": "AS227",
+    "name": "radiant energy per unit wavelength",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-041"
+    ],
+    "symbol": "Q_{\\mathrm{e},\\lambda}"
+  },
+  {
+    "id": "AS228",
+    "name": "radiant energy per unit wavenumber",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-041"
+    ],
+    "symbol": "Q_{\\mathrm{e},\\sigma}"
+  },
+  {
+    "id": "AS229",
+    "name": "radiant flux density per unit frequency",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://doi.org/10.1351/goldbook.08280"
+    ],
+    "symbol": null
   },
   {
     "id": "AS23",
     "name": "capacitance",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ELCA"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ELCA"
+    ],
+    "symbol": null
+  },
+  {
+    "id": "AS230",
+    "name": "radiant flux density per unit wavelength",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://doi.org/10.1351/goldbook.08280"
+    ],
+    "symbol": null
+  },
+  {
+    "id": "AS231",
+    "name": "radiant flux density per unit wavenumber",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://doi.org/10.1351/goldbook.08280"
+    ],
+    "symbol": null
+  },
+  {
+    "id": "AS232",
+    "name": "radiant energy density per unit frequency",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://doi.org/10.1351/goldbook.R05040"
+    ],
+    "symbol": null
+  },
+  {
+    "id": "AS233",
+    "name": "radiant energy density per unit wavelength",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://doi.org/10.1351/goldbook.R05040"
+    ],
+    "symbol": null
+  },
+  {
+    "id": "AS234",
+    "name": "radiant energy density per unit wavenumber",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://doi.org/10.1351/goldbook.R05040"
+    ],
+    "symbol": null
+  },
+  {
+    "id": "AS235",
+    "name": "radiance per unit frequency",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-049"
+    ],
+    "symbol": "L_{\\mathrm{e},\\nu}"
+  },
+  {
+    "id": "AS236",
+    "name": "radiance per unit wavelength",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-049"
+    ],
+    "symbol": "L_{\\mathrm{e},\\lambda}"
+  },
+  {
+    "id": "AS237",
+    "name": "radiance per unit wavenumber",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-049"
+    ],
+    "symbol": "L_{\\mathrm{e},\\sigma}"
+  },
+  {
+    "id": "AS238",
+    "name": "radiant exposure per unit frequency",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-071"
+    ],
+    "symbol": "H_{\\mathrm{e},\\nu}"
+  },
+  {
+    "id": "AS239",
+    "name": "radiant exposure per unit wavelength",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-071"
+    ],
+    "symbol": "H_{\\mathrm{e},\\lambda}"
   },
   {
     "id": "AS24",
     "name": "electric resistance",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ELRE"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ELRE"
+    ],
+    "symbol": null
+  },
+  {
+    "id": "AS240",
+    "name": "radiant exposure per unit wavenumber",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-071"
+    ],
+    "symbol": "H_{\\mathrm{e},\\sigma}"
+  },
+  {
+    "id": "AS241",
+    "name": "irradiance per unit frequency",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-053"
+    ],
+    "symbol": "E_{\\mathrm{e},\\nu}"
+  },
+  {
+    "id": "AS242",
+    "name": "irradiance per unit wavelength",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-053"
+    ],
+    "symbol": "E_{\\mathrm{e},\\lambda}"
+  },
+  {
+    "id": "AS243",
+    "name": "irradiance per unit wavenumber",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-053"
+    ],
+    "symbol": "E_{\\mathrm{e},\\sigma}"
+  },
+  {
+    "id": "AS244",
+    "name": "reactive power",
+    "sources": [
+      "SI Brochure"
+    ],
+    "symbol": null
+  },
+  {
+    "id": "AS245",
+    "name": "absorptance",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-24-082"
+    ],
+    "symbol": "\\alpha"
+  },
+  {
+    "id": "AS246",
+    "name": "revolution",
+    "sources": [
+      "ISO 80000-3:2006 3-14"
+    ],
+    "symbol": "r"
+  },
+  {
+    "id": "AS247",
+    "name": "radiant fluence per unit frequency",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-074"
+    ],
+    "symbol": "H_{\\mathrm{e},\\mathrm{o}}"
+  },
+  {
+    "id": "AS248",
+    "name": "radiant fluence per unit wavelength",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-074"
+    ],
+    "symbol": "H_{\\mathrm{e},\\mathrm{o}}"
+  },
+  {
+    "id": "AS249",
+    "name": "radiant fluence per unit wavenumber",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-074"
+    ],
+    "symbol": "H_{\\mathrm{e},\\mathrm{o}}"
   },
   {
     "id": "AS25",
     "name": "electric conductance",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ELCO"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ELCO"
+    ],
+    "symbol": null
+  },
+  {
+    "id": "AS250",
+    "name": "power ratio",
+    "sources": [],
+    "symbol": null
+  },
+  {
+    "id": "AS251",
+    "name": "logarithmic power ratio",
+    "sources": [
+      "ISO 80000-1"
+    ],
+    "symbol": null
+  },
+  {
+    "id": "AS252",
+    "name": "logarithmic ratio",
+    "sources": [
+      "ISO 80000-1"
+    ],
+    "symbol": null
   },
   {
     "id": "AS26",
     "name": "magnetic flux",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/MGFL"
+    "sources": [
+      "https://si-digital-framework.org/quantities/MGFL"
+    ],
+    "symbol": null
   },
   {
     "id": "AS27",
     "name": "magnetic flux density",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/MGFD"
+    "sources": [
+      "https://si-digital-framework.org/quantities/MGFD"
+    ],
+    "symbol": null
   },
   {
     "id": "AS28",
     "name": "inductance",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ELIN"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ELIN"
+    ],
+    "symbol": null
   },
   {
     "id": "AS29",
     "name": "luminous flux",
-    "symbol": "\\Phi_\\mathrm{V}",
-    "reference": "https://cie.co.at/eilvterm/17-21-039"
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-039",
+      "The CIE system of physical photometry (ISO/CIE 23539:2023)"
+    ],
+    "symbol": "\\Phi_\\mathrm{V}"
   },
   {
     "id": "AS3",
     "name": "length",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/LENG"
+    "sources": [
+      "https://si-digital-framework.org/quantities/LENG"
+    ],
+    "symbol": null
   },
   {
     "id": "AS30",
     "name": "illuminance",
-    "symbol": "E_\\mathrm{V}",
-    "reference": "https://cie.co.at/eilvterm/17-21-060"
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-060"
+    ],
+    "symbol": "E_\\mathrm{V}"
   },
   {
     "id": "AS31",
     "name": "activity  (of radionuclide)",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ARRN"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ARRN"
+    ],
+    "symbol": null
   },
   {
     "id": "AS32",
     "name": "kerma",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/KRMA"
+    "sources": [
+      "https://si-digital-framework.org/quantities/KRMA"
+    ],
+    "symbol": null
   },
   {
     "id": "AS33",
     "name": "absorbed dose",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ABDO"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ABDO"
+    ],
+    "symbol": null
   },
   {
     "id": "AS34",
     "name": "dose equivalent",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/DOEQ"
+    "sources": [
+      "https://si-digital-framework.org/quantities/DOEQ"
+    ],
+    "symbol": null
   },
   {
     "id": "AS35",
     "name": "catalytic activity",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/CATA"
+    "sources": [
+      "https://si-digital-framework.org/quantities/CATA"
+    ],
+    "symbol": null
   },
   {
     "id": "AS36",
     "name": "area",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/AREA"
+    "sources": [
+      "https://si-digital-framework.org/quantities/AREA"
+    ],
+    "symbol": "A"
   },
   {
     "id": "AS37",
     "name": "volume",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/VOLU"
+    "sources": [
+      "https://si-digital-framework.org/quantities/VOLU"
+    ],
+    "symbol": "V"
   },
   {
     "id": "AS38",
     "name": "speed",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/VELO"
+    "sources": [
+      "https://si-digital-framework.org/quantities/VELO"
+    ],
+    "symbol": "v"
   },
   {
     "id": "AS39",
     "name": "acceleration",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ACCE"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ACCE"
+    ],
+    "symbol": "a"
   },
   {
     "id": "AS4",
     "name": "time",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/TIME"
+    "sources": [
+      "https://si-digital-framework.org/quantities/TIME"
+    ],
+    "symbol": null
   },
   {
     "id": "AS40",
     "name": "wavenumber",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/WANU"
+    "sources": [
+      "https://si-digital-framework.org/quantities/WANU"
+    ],
+    "symbol": "\\sigma"
   },
   {
     "id": "AS41",
     "name": "volumetric mass density",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/DENS"
+    "sources": [
+      "https://si-digital-framework.org/quantities/DENS"
+    ],
+    "symbol": "\\rho"
   },
   {
     "id": "AS42",
     "name": "surface mass density",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/SUDE"
+    "sources": [
+      "https://si-digital-framework.org/quantities/SUDE"
+    ],
+    "symbol": null
   },
   {
     "id": "AS43",
     "name": "specific volume",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/SPVO"
+    "sources": [
+      "https://si-digital-framework.org/quantities/SPVO"
+    ],
+    "symbol": "v"
   },
   {
     "id": "AS44",
     "name": "current density",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/CUDE"
+    "sources": [
+      "https://si-digital-framework.org/quantities/CUDE"
+    ],
+    "symbol": "j"
   },
   {
     "id": "AS45",
     "name": "magenetic field strength",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/MAFD"
+    "sources": [
+      "https://si-digital-framework.org/quantities/MAFD"
+    ],
+    "symbol": null
   },
   {
     "id": "AS46",
     "name": "amount of substance concentration",
-    "symbol": "c",
-    "reference": "https://si-digital-framework.org/quantities/AMSC"
+    "sources": [
+      "https://si-digital-framework.org/quantities/AMSC"
+    ],
+    "symbol": "c"
   },
   {
     "id": "AS47",
-    "name": "luminous efficacy of a source",
-    "symbol": "\\nu_\\mathrm{V}",
-    "reference": "https://cie.co.at/eilvterm/17-21-089"
+    "name": "luminous efficacy",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-089",
+      "https://cie.co.at/eilvterm/17-21-090",
+      "The CIE system of physical photometry (ISO/CIE 23539:2023)"
+    ],
+    "symbol": "\\nu_\\mathrm{V}"
   },
   {
     "id": "AS48",
     "name": "luminous_exposure",
-    "symbol": "H_\\mathrm{V}",
-    "reference": "https://cie.co.at/eilvterm/17-21-072"
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-072"
+    ],
+    "symbol": "H_\\mathrm{V}"
   },
   {
     "id": "AS49",
     "name": "acoustic impedance",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ACIM"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ACIM"
+    ],
+    "symbol": null
   },
   {
     "id": "AS5",
     "name": "electric current",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ELCU"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ELCU"
+    ],
+    "symbol": null
   },
   {
     "id": "AS50",
     "name": "moment of force",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/TORQ"
+    "sources": [
+      "https://si-digital-framework.org/quantities/TORQ"
+    ],
+    "symbol": null
   },
   {
     "id": "AS51",
     "name": "surface tension",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/SUTE"
+    "sources": [
+      "https://si-digital-framework.org/quantities/SUTE"
+    ],
+    "symbol": null
   },
   {
     "id": "AS52",
     "name": "angular velocity",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/VELA"
+    "sources": [
+      "https://si-digital-framework.org/quantities/VELA"
+    ],
+    "symbol": null
   },
   {
     "id": "AS53",
     "name": "angular frequency",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ANGF"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ANGF"
+    ],
+    "symbol": null
   },
   {
     "id": "AS54",
     "name": "angular acceleration",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ACCA"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ACCA"
+    ],
+    "symbol": null
   },
   {
     "id": "AS55",
     "name": "heat flux density",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/HEFD"
+    "sources": [
+      "https://si-digital-framework.org/quantities/HEFD"
+    ],
+    "symbol": null
   },
   {
     "id": "AS56",
     "name": "irradiance",
-    "symbol": "E\\mathrm{e}",
-    "reference": "https://si-digital-framework.org/quantities/IRRA"
+    "sources": [
+      "https://si-digital-framework.org/quantities/IRRA"
+    ],
+    "symbol": "E_\\mathrm{e}"
   },
   {
     "id": "AS57",
     "name": "action",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ACTI"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ACTI"
+    ],
+    "symbol": null
   },
   {
     "id": "AS58",
     "name": "entropy",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ENTR"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ENTR"
+    ],
+    "symbol": null
   },
   {
     "id": "AS59",
     "name": "specific heat capacity",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/SHEC"
+    "sources": [
+      "https://si-digital-framework.org/quantities/SHEC"
+    ],
+    "symbol": null
   },
   {
     "id": "AS6",
-    "name": "luminous efficacy of radiation",
-    "symbol": "K",
-    "reference": "https://cie.co.at/eilvterm/17-21-090"
+    "name": "luminous flux per unit frequency",
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-029",
+      "https://cie.co.at/eilvterm/17-21-039"
+    ],
+    "symbol": "\\Phi_{\\mathrm{V},\\nu}"
   },
   {
     "id": "AS60",
     "name": "specific entropy",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/SENT"
+    "sources": [
+      "https://si-digital-framework.org/quantities/SENT"
+    ],
+    "symbol": null
   },
   {
     "id": "AS61",
     "name": "specific energy",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/SENG"
+    "sources": [
+      "https://si-digital-framework.org/quantities/SENG"
+    ],
+    "symbol": null
   },
   {
     "id": "AS62",
     "name": "anisotropy",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ANIS"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ANIS"
+    ],
+    "symbol": null
   },
   {
     "id": "AS63",
     "name": "energy density",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ENGD"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ENGD"
+    ],
+    "symbol": null
   },
   {
     "id": "AS64",
     "name": "electric field strength",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ELFS"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ELFS"
+    ],
+    "symbol": null
   },
   {
     "id": "AS65",
     "name": "electric charge density",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ELCD"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ELCD"
+    ],
+    "symbol": null
   },
   {
     "id": "AS66",
     "name": "surface charge density",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/SUCD"
+    "sources": [
+      "https://si-digital-framework.org/quantities/SUCD"
+    ],
+    "symbol": null
   },
   {
     "id": "AS67",
     "name": "electric flux density",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ELFD"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ELFD"
+    ],
+    "symbol": null
   },
   {
     "id": "AS68",
     "name": "electric displacement",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ELDS"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ELDS"
+    ],
+    "symbol": null
   },
   {
     "id": "AS69",
     "name": "permittivity",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/PRMI"
+    "sources": [
+      "https://si-digital-framework.org/quantities/PRMI"
+    ],
+    "symbol": null
   },
   {
     "id": "AS7",
     "name": "amount of substance",
-    "symbol": "n",
-    "reference": "https://si-digital-framework.org/quantities/AMSU"
+    "sources": [
+      "https://si-digital-framework.org/quantities/AMSU"
+    ],
+    "symbol": "n"
   },
   {
     "id": "AS70",
     "name": "permeability",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/PRME"
+    "sources": [
+      "https://si-digital-framework.org/quantities/PRME"
+    ],
+    "symbol": null
   },
   {
     "id": "AS71",
     "name": "molar energy",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/MOEG"
+    "sources": [
+      "https://si-digital-framework.org/quantities/MOEG"
+    ],
+    "symbol": null
   },
   {
     "id": "AS72",
     "name": "molar entropy",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/MOEN"
+    "sources": [
+      "https://si-digital-framework.org/quantities/MOEN"
+    ],
+    "symbol": null
   },
   {
     "id": "AS73",
     "name": "molar heat capacity",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/MOHC"
+    "sources": [
+      "https://si-digital-framework.org/quantities/MOHC"
+    ],
+    "symbol": null
   },
   {
     "id": "AS74",
     "name": "exposure",
-    "symbol": null,
-    "reference": null
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS75",
     "name": "absorbed dose rate",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/ABDR"
+    "sources": [
+      "https://si-digital-framework.org/quantities/ABDR"
+    ],
+    "symbol": null
   },
   {
     "id": "AS76",
     "name": "radiant intensity",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/RAIN"
+    "sources": [
+      "https://si-digital-framework.org/quantities/RAIN"
+    ],
+    "symbol": "I_\\mathrm{e}"
   },
   {
     "id": "AS77",
     "name": "radiance",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/RADI"
+    "sources": [
+      "https://si-digital-framework.org/quantities/RADI"
+    ],
+    "symbol": "L_\\mathrm{e}"
   },
   {
     "id": "AS78",
     "name": "catalytic activity concentration",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/CTAC"
+    "sources": [
+      "https://si-digital-framework.org/quantities/CTAC"
+    ],
+    "symbol": null
   },
   {
     "id": "AS79",
     "name": "volumetric flow rate",
-    "symbol": null,
-    "reference": "NIST Special Publication 1038"
+    "sources": [
+      "NIST Special Publication 1038"
+    ],
+    "symbol": null
   },
   {
     "id": "AS8",
     "name": "luminous intensity",
-    "symbol": "I_\\mathrm{V}",
-    "reference": "https://cie.co.at/eilvterm/17-21-045"
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-045",
+      "The CIE system of physical photometry (ISO/CIE 23539:2023)"
+    ],
+    "symbol": "I_\\mathrm{V}"
   },
   {
     "id": "AS80",
     "name": "fuel efficiency",
-    "symbol": null,
-    "reference": "NIST Special Publication 1038"
+    "sources": [
+      "NIST Special Publication 1038"
+    ],
+    "symbol": null
   },
   {
     "id": "AS81",
     "name": "moment of mass",
-    "symbol": null,
-    "reference": "NIST Special Publication 1038"
+    "sources": [
+      "NIST Special Publication 1038"
+    ],
+    "symbol": null
   },
   {
     "id": "AS82",
     "name": "momentum",
-    "symbol": null,
-    "reference": "NIST Special Publication 1038"
+    "sources": [
+      "NIST Special Publication 1038"
+    ],
+    "symbol": null
   },
   {
     "id": "AS83",
     "name": "moment of inertia",
-    "symbol": null,
-    "reference": "https://doi.org/10.1351/goldbook.M04006"
+    "sources": [
+      "https://doi.org/10.1351/goldbook.M04006"
+    ],
+    "symbol": null
   },
   {
     "id": "AS84",
     "name": "kinematic viscosity",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/KIVI"
+    "sources": [
+      "https://si-digital-framework.org/quantities/KIVI"
+    ],
+    "symbol": null
   },
   {
     "id": "AS85",
     "name": "linear expansion coefficient",
-    "symbol": null,
-    "reference": "NIST Special Publication 1038"
+    "sources": [
+      "NIST Special Publication 1038"
+    ],
+    "symbol": null
   },
   {
     "id": "AS86",
     "name": "luminous efficiency",
-    "symbol": "V",
-    "reference": "https://cie.co.at/eilvterm/17-21-094"
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-094"
+    ],
+    "symbol": "V"
   },
   {
     "id": "AS87",
     "name": "heat capacity",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/HECA"
+    "sources": [
+      "https://si-digital-framework.org/quantities/HECA"
+    ],
+    "symbol": null
   },
   {
     "id": "AS88",
     "name": "specific internal energy",
-    "symbol": null,
-    "reference": "NIST Special Publication 1038"
+    "sources": [
+      "NIST Special Publication 1038"
+    ],
+    "symbol": null
   },
   {
     "id": "AS89",
     "name": "magnetic field strength",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/MAFD"
+    "sources": [
+      "https://si-digital-framework.org/quantities/MAFD"
+    ],
+    "symbol": "H"
   },
   {
     "id": "AS9",
     "name": "si dimensionless",
-    "symbol": null,
-    "reference": null
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS90",
     "name": "resistivity",
-    "symbol": null,
-    "reference": "NIST Special Publication 1038"
+    "sources": [
+      "NIST Special Publication 1038"
+    ],
+    "symbol": null
   },
   {
     "id": "AS91",
     "name": "conductivity",
-    "symbol": null,
-    "reference": "https://doi.org/10.1351/goldbook.C01245"
+    "sources": [
+      "https://doi.org/10.1351/goldbook.C01245"
+    ],
+    "symbol": null
   },
   {
     "id": "AS92",
     "name": "wavelength",
-    "symbol": null,
-    "reference": "https://doi.org/10.1351/goldbook.W06659"
+    "sources": [
+      "https://doi.org/10.1351/goldbook.W06659"
+    ],
+    "symbol": null
   },
   {
     "id": "AS93",
     "name": "luminous exitance",
-    "symbol": "M_\\mathrm{V}",
-    "reference": "https://cie.co.at/eilvterm/17-21-081"
+    "sources": [
+      "https://cie.co.at/eilvterm/17-21-081"
+    ],
+    "symbol": "M_\\mathrm{V}"
   },
   {
     "id": "AS94",
     "name": "emissivity",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/EMIS"
+    "sources": [
+      "https://cie.co.at/eilvterm/17-24-009"
+    ],
+    "symbol": "\\epsilon"
   },
   {
     "id": "AS95",
     "name": "photon energy",
-    "symbol": null,
-    "reference": null
+    "sources": [],
+    "symbol": null
   },
   {
     "id": "AS96",
     "name": "transmittance",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/OPTR"
+    "sources": [
+      "https://cie.co.at/eilvterm/17-24-065"
+    ],
+    "symbol": "T"
   },
   {
     "id": "AS97",
     "name": "absorbance",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/OPAB"
+    "sources": [
+      "https://si-digital-framework.org/quantities/OPAB"
+    ],
+    "symbol": null
   },
   {
     "id": "AS98",
     "name": "optical density",
-    "symbol": "A",
-    "reference": "https://doi.org/10.1351/goldbook.A00028"
+    "sources": [
+      "https://doi.org/10.1351/goldbook.A00028"
+    ],
+    "symbol": "A"
   },
   {
     "id": "AS99",
     "name": "reflectance",
-    "symbol": null,
-    "reference": "https://si-digital-framework.org/quantities/OPRE"
+    "sources": [
+      "https://cie.co.at/eilvterm/17-24-064"
+    ],
+    "symbol": "\\rho"
   }
 ]

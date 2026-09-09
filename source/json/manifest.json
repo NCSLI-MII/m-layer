@@ -1,0 +1,100 @@
+{
+  "collections": {
+    "aspects": {
+      "changed": false,
+      "endpoint": "/aspects",
+      "file": "aspects.json",
+      "row_count": 250,
+      "sha256": "80f08bd82494642aa0c2878c8eaf3c443304070655ed95e4452f2f626a106fd2",
+      "skipped_write": true,
+      "status_code": 200
+    },
+    "casts": {
+      "changed": false,
+      "endpoint": "/casts",
+      "file": "casts.json",
+      "row_count": 16,
+      "sha256": "cca36fc853853588191696c587e108adabb4b6f4920211f4fc9f3a9819261f0b",
+      "skipped_write": true,
+      "status_code": 200
+    },
+    "conversions": {
+      "changed": false,
+      "endpoint": "/conversions",
+      "file": "conversions.json",
+      "row_count": 6364,
+      "sha256": "7480451941bfb0b6f5fe57856e11513057a5977518bb168c2d3f0e0968e69956",
+      "skipped_write": true,
+      "status_code": 200
+    },
+    "dimensions": {
+      "changed": false,
+      "endpoint": "/dimensions",
+      "file": "dimensions.json",
+      "row_count": 159,
+      "sha256": "36f6503f79d71ebe181e06c3bd3b584427674534b5c49f2d8f0338c428476a75",
+      "skipped_write": true,
+      "status_code": 200
+    },
+    "functions": {
+      "changed": false,
+      "endpoint": "/functions",
+      "file": "functions.json",
+      "row_count": 8,
+      "sha256": "a380f387223f60914493a9b8c151650cc5b9fa94a704ba1b88b80c769ac0141a",
+      "skipped_write": true,
+      "status_code": 200
+    },
+    "scales": {
+      "changed": false,
+      "endpoint": "/scales",
+      "file": "scales.json",
+      "row_count": 1752,
+      "sha256": "ca3ea36e6b8e587c4942850e76d58db4f62137389b5cf486bb33842aa7ea9b3d",
+      "skipped_write": true,
+      "status_code": 200
+    },
+    "scaletypes": {
+      "changed": false,
+      "endpoint": "/scaletypes",
+      "file": "scaletypes.json",
+      "row_count": 3,
+      "sha256": "c8046bdc5982e9ab51ed29692bbf7c2b83933084e706fe790db6158d13f22530",
+      "skipped_write": true,
+      "status_code": 200
+    },
+    "systems": {
+      "changed": false,
+      "endpoint": "/systems",
+      "file": "systems.json",
+      "row_count": 7,
+      "sha256": "d63acf90c299dba6486ceb71a085c9df2e3f246cbe8f7971f01d6d2eb3fdb236",
+      "skipped_write": true,
+      "status_code": 200
+    },
+    "units": {
+      "changed": false,
+      "endpoint": "/units",
+      "file": "units.json",
+      "row_count": 1666,
+      "sha256": "7c19679a8d76b0a9b27f959412967a3c7d27c552e4a54e9da172e548959a8294",
+      "skipped_write": true,
+      "status_code": 200
+    }
+  },
+  "dataset_name": "mlayer",
+  "generated_at_utc": "2026-09-09T15:02:43+00:00",
+  "source": {
+    "base_url": "https://api.mlayer.org",
+    "type": "api"
+  },
+  "summary": {
+    "changed_files": [],
+    "collection_count": 9,
+    "total_rows": 10225
+  },
+  "tool": {
+    "name": "mlayer-api-extractor",
+    "version": "1.0.0"
+  }
+}

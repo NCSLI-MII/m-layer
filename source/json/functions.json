@@ -1,50 +1,50 @@
 [
   {
+    "comments": null,
     "id": "FN1",
     "py_function": "lambda x: x",
-    "py_names_in_scope": "{}",
-    "comments": null
+    "py_names_in_scope": "{}"
   },
   {
+    "comments": null,
     "id": "FN2",
     "py_function": "lambda x: a*x",
-    "py_names_in_scope": "{'a'}",
-    "comments": null
+    "py_names_in_scope": "{'a'}"
   },
   {
+    "comments": null,
     "id": "FN3",
     "py_function": "lambda x: a*x + b",
-    "py_names_in_scope": "{'a', 'b'}",
-    "comments": null
+    "py_names_in_scope": "{'a', 'b'}"
   },
   {
+    "comments": "fmod(x, y) is equal to x - n*y, for some integer n, such that the result has the same sign as x and magnitude less than the range abs(y). ",
     "id": "FN4",
     "py_function": "lambda x: z + y_ub if ( z := math.fmod(a*x - y_lb, y_ub - y_lb) ) < 0 else z + y_lb ",
-    "py_names_in_scope": "{'a', 'y_lb', 'y_ub'}",
-    "comments": "fmod(x, y) is equal to x - n*y, for some integer n, such that the result has the same sign as x and magnitude less than the range abs(y). "
+    "py_names_in_scope": "{'a', 'y_lb', 'y_ub'}"
   },
   {
+    "comments": "Placeholder for CCT advice",
     "id": "FN5",
     "py_function": null,
-    "py_names_in_scope": null,
-    "comments": "Placeholder for CCT advice"
+    "py_names_in_scope": null
   },
   {
+    "comments": "Placeholder for CCT advice",
     "id": "FN6",
     "py_function": null,
-    "py_names_in_scope": null,
-    "comments": "Placeholder for CCT advice"
+    "py_names_in_scope": null
   },
   {
+    "comments": "Placeholder for CCT advice",
     "id": "FN7",
     "py_function": null,
-    "py_names_in_scope": null,
-    "comments": "Placeholder for CCT advice"
+    "py_names_in_scope": null
   },
   {
+    "comments": "Placeholder for CCT advice",
     "id": "FN8",
     "py_function": null,
-    "py_names_in_scope": null,
-    "comments": "Placeholder for CCT advice"
+    "py_names_in_scope": null
   }
 ]
