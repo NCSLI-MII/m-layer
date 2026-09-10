@@ -41,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      DEFAULT_SQL_DUMP_PATH: source/sqldata/m_layer.dmp
+      DEFAULT_SQL_DUMP_PATH: source/sqldump/m_layer.dmp
       DEFAULT_JSON_DIR: source/json
       REPORT_DIR: reports
       TEXT_REPORT_PATH: reports/mlayer_source_audit.txt
