@@ -44,6 +44,11 @@ Typical usage:
         --dump ./data/m_layer_v5.86.dmp \
         --json-dir ./data/json
 
+    python summarize_mlayer_sources.py \
+        --dump ./data/m_layer_v5.86.dmp \
+        --json-dir ./data/json \
+        --filter-sql-conversion-cast
+
 JSON report:
 
     python summarize_mlayer_sources.py \
@@ -99,6 +104,15 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
         action="store_true",
         help="Fail on malformed dump rows instead of logging/skipping them.",
     )
+    
+    parser.add_argument(
+        "--filter-sql-conversion-cast",
+        action="store_true",
+        help=(
+            "Also compare JSON against SQL after filtering out conversion_cast "
+            "rows where aspect id is AS1 or scale id is SC1018."
+        ),
+    )
 
     args = parser.parse_args(argv)
 
@@ -134,6 +148,7 @@ def main(argv: list[str]) -> int:
         json_dir=args.json_dir,
         sample_limit=args.sample_limit,
         tolerant_dump_parser=not args.strict_dump_parser,
+        apply_sql_conversion_cast_filter=args.filter_sql_conversion_cast,
     )
 
     report = auditor.run()

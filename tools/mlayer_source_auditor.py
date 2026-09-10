@@ -43,6 +43,15 @@ class SourceTableSummary:
 
 
 @dataclass
+class SqlConversionCastFilterSummary:
+    original_count: int = 0
+    filtered_count: int = 0
+    removed_count: int = 0
+    filter_reason_counts: dict[str, int] = field(default_factory=dict)
+    removed_sample: list[dict[str, Any]] = field(default_factory=list)
+
+
+@dataclass
 class ConversionCastSummary:
     total: int = 0
     conversions: int = 0
@@ -68,10 +77,26 @@ class KeyComparison:
 class SourceAuditReport:
     sql_tables: dict[str, SourceTableSummary] = field(default_factory=dict)
     json_collections: dict[str, SourceTableSummary] = field(default_factory=dict)
+    
     sql_conversion_cast: ConversionCastSummary = field(default_factory=ConversionCastSummary)
     json_conversion_cast: ConversionCastSummary = field(default_factory=ConversionCastSummary)
+    
+    # New filtered SQL conversion_cast summary
+    # Filters out null aspect and scale wildcard
+    # This would keep json and sql data consistent
+    filtered_sql_tables: dict[str, SourceTableSummary] = field(default_factory=dict)
+    filtered_sql_conversion_cast: ConversionCastSummary = field(default_factory=ConversionCastSummary)
+    sql_conversion_cast_filter: SqlConversionCastFilterSummary = field(
+        default_factory=SqlConversionCastFilterSummary
+    )
+    
     count_comparisons: list[KeyComparison] = field(default_factory=list)
     key_comparisons: list[KeyComparison] = field(default_factory=list)
+    
+    # New comparison after SQL conversion_cast filter
+    filtered_count_comparisons: list[KeyComparison] = field(default_factory=list)
+    filtered_key_comparisons: list[KeyComparison] = field(default_factory=list)
+
     warnings: list[str] = field(default_factory=list)
 
 
@@ -385,15 +410,21 @@ class MlayerSourceAuditor:
         sample_limit: int = 5,
         distinct_limit_columns: int = 25,
         tolerant_dump_parser: bool = True,
+        apply_sql_conversion_cast_filter: bool = False,
     ) -> None:
         self.dump_path = dump_path
         self.json_dir = json_dir
         self.sample_limit = sample_limit
         self.distinct_limit_columns = distinct_limit_columns
         self.tolerant_dump_parser = tolerant_dump_parser
+        self.apply_sql_conversion_cast_filter = apply_sql_conversion_cast_filter
 
         self.sql_tables: dict[str, list[dict[str, Any]]] = {}
         self.json_collections: dict[str, list[dict[str, Any]]] = {}
+
+        # New filtered SQL view
+        self.filtered_sql_tables: dict[str, list[dict[str, Any]]] = {}
+
 
     def run(self) -> SourceAuditReport:
         report = SourceAuditReport()
@@ -409,6 +440,20 @@ class MlayerSourceAuditor:
                 self.sql_tables.get("conversion_cast", [])
             )
 
+            if self.apply_sql_conversion_cast_filter:
+                (
+                    self.filtered_sql_tables,
+                    report.sql_conversion_cast_filter,
+                ) = self.filter_sql_conversion_cast(self.sql_tables)
+
+                report.filtered_sql_tables = self.summarize_source(
+                    self.filtered_sql_tables
+                )
+
+                report.filtered_sql_conversion_cast = self.summarize_sql_conversion_cast(
+                    self.filtered_sql_tables.get("conversion_cast", [])
+                )
+
         if self.json_dir:
             self.json_collections = JsonSourceParser().parse(self.json_dir)
 
@@ -420,13 +465,53 @@ class MlayerSourceAuditor:
             )
 
         if self.dump_path and self.json_dir:
-            report.count_comparisons = self.compare_counts()
-            report.key_comparisons = self.compare_entity_keys()
-            report.key_comparisons.append(self.compare_conversion_cast_keys())
+            # Before filter: raw SQL vs JSON.
+            report.count_comparisons = self.compare_counts_for_sources(
+                sql_tables=self.sql_tables,
+                json_collections=self.json_collections,
+                name_prefix="count",
+            )
+
+            report.key_comparisons = self.compare_entity_keys_for_sources(
+                sql_tables=self.sql_tables,
+                json_collections=self.json_collections,
+                name_prefix="keys",
+            )
+
+            report.key_comparisons.append(
+                self.compare_conversion_cast_keys_for_sources(
+                    sql_tables=self.sql_tables,
+                    json_collections=self.json_collections,
+                    name_prefix="keys",
+                )
+            )
+
+            # After filter: filtered SQL vs JSON.
+            if self.apply_sql_conversion_cast_filter:
+                report.filtered_count_comparisons = self.compare_counts_for_sources(
+                    sql_tables=self.filtered_sql_tables,
+                    json_collections=self.json_collections,
+                    name_prefix="filtered_count",
+                )
+
+                report.filtered_key_comparisons = self.compare_entity_keys_for_sources(
+                    sql_tables=self.filtered_sql_tables,
+                    json_collections=self.json_collections,
+                    name_prefix="filtered_keys",
+                )
+
+                report.filtered_key_comparisons.append(
+                    self.compare_conversion_cast_keys_for_sources(
+                        sql_tables=self.filtered_sql_tables,
+                        json_collections=self.json_collections,
+                        name_prefix="filtered_keys",
+                    )
+                )
 
         report.warnings = self.collect_warnings(report)
 
         return report
+
 
     # -------------------------------------------------------------------------
     # Generic summaries
@@ -507,9 +592,78 @@ class MlayerSourceAuditor:
 
         return value
 
+    @staticmethod
+    def sql_conversion_cast_filter_reasons(row: dict[str, Any]) -> list[str]:
+        reasons: list[str] = []
+
+        # Direct conversion aspect field.
+        if row.get("aspect_id") == "AS1":
+            reasons.append("aspect_id=AS1")
+
+        # Cast rows may use src/dst aspect IDs rather than aspect_id.
+        # Include these checks if AS1 should be excluded everywhere.
+        if row.get("src_aspect_id") == "AS1":
+            reasons.append("src_aspect_id=AS1")
+
+        if row.get("dst_aspect_id") == "AS1":
+            reasons.append("dst_aspect_id=AS1")
+
+        # Scale IDs used by both conversions and casts.
+        if row.get("src_scale_id") == "SC1018":
+            reasons.append("src_scale_id=SC1018")
+
+        if row.get("dst_scale_id") == "SC1018":
+            reasons.append("dst_scale_id=SC1018")
+
+        return reasons
+
     # -------------------------------------------------------------------------
     # Conversion/cast summaries
     # -------------------------------------------------------------------------
+
+    def filter_sql_conversion_cast(
+        self,
+        sql_tables: dict[str, list[dict[str, Any]]],
+        ) -> tuple[dict[str, list[dict[str, Any]]], SqlConversionCastFilterSummary]:
+        """
+        Return a copy of the SQL tables where conversion_cast rows with
+        aspect AS1 or scale SC1018 have been removed.
+
+        The filter applies only to the SQL conversion_cast table.
+        Other SQL tables are copied unchanged.
+        """
+        filtered_tables = {
+            table_name: list(rows)
+            for table_name, rows in sql_tables.items()
+        }
+
+        original_rows = sql_tables.get("conversion_cast", [])
+        kept_rows: list[dict[str, Any]] = []
+        removed_rows: list[dict[str, Any]] = []
+        reason_counts: Counter[str] = Counter()
+
+        for row in original_rows:
+            reasons = self.sql_conversion_cast_filter_reasons(row)
+
+            if reasons:
+                removed_rows.append(row)
+
+                for reason in reasons:
+                    reason_counts[reason] += 1
+            else:
+                kept_rows.append(row)
+
+        filtered_tables["conversion_cast"] = kept_rows
+
+        summary = SqlConversionCastFilterSummary(
+            original_count=len(original_rows),
+            filtered_count=len(kept_rows),
+            removed_count=len(removed_rows),
+            filter_reason_counts=dict(reason_counts),
+            removed_sample=removed_rows[: self.sample_limit],
+        )
+
+        return filtered_tables, summary
 
     def summarize_sql_conversion_cast(
         self,
@@ -637,39 +791,42 @@ class MlayerSourceAuditor:
     # -------------------------------------------------------------------------
     # Comparisons
     # -------------------------------------------------------------------------
-
-    def compare_counts(self) -> list[KeyComparison]:
+    def compare_counts_for_sources(
+        self,
+        *,
+        sql_tables: dict[str, list[dict[str, Any]]],
+        json_collections: dict[str, list[dict[str, Any]]],
+        name_prefix: str = "count",) -> list[KeyComparison]:
+        
         comparisons: list[KeyComparison] = []
 
         for sql_table, json_collection in self.SQL_TO_JSON_COUNT_MAP.items():
             if json_collection is None:
                 continue
 
-            sql_count = len(self.sql_tables.get(sql_table, []))
-            json_count = len(self.json_collections.get(json_collection, []))
-
-            common = min(sql_count, json_count)
+            sql_count = len(sql_tables.get(sql_table, []))
+            json_count = len(json_collections.get(json_collection, []))
 
             comparisons.append(
                 KeyComparison(
-                    name=f"count:{sql_table}~{json_collection}",
+                    name=f"{name_prefix}:{sql_table}~{json_collection}",
                     sql_count=sql_count,
                     json_count=json_count,
-                    common_count=common,
+                    common_count=min(sql_count, json_count),
                     only_sql_count=max(sql_count - json_count, 0),
                     only_json_count=max(json_count - sql_count, 0),
                 )
             )
 
         # Special comparison: SQL conversion_cast vs JSON conversions + casts.
-        sql_count = len(self.sql_tables.get("conversion_cast", []))
-        json_count = len(self.json_collections.get("conversions", [])) + len(
-            self.json_collections.get("casts", [])
+        sql_count = len(sql_tables.get("conversion_cast", []))
+        json_count = len(json_collections.get("conversions", [])) + len(
+            json_collections.get("casts", [])
         )
 
         comparisons.append(
             KeyComparison(
-                name="count:conversion_cast~conversions+casts",
+                name=f"{name_prefix}:conversion_cast~conversions+casts",
                 sql_count=sql_count,
                 json_count=json_count,
                 common_count=min(sql_count, json_count),
@@ -680,31 +837,86 @@ class MlayerSourceAuditor:
 
         return comparisons
 
-    def compare_entity_keys(self) -> list[KeyComparison]:
+    
+    def compare_counts(self) -> list[KeyComparison]:
+        return self.compare_counts_for_sources(
+            sql_tables=self.sql_tables,
+            json_collections=self.json_collections,
+            name_prefix="count",
+        )
+
+    
+    def compare_entity_keys_for_sources(
+        self,
+        *,
+        sql_tables: dict[str, list[dict[str, Any]]],
+        json_collections: dict[str, list[dict[str, Any]]],
+        name_prefix: str = "keys",) -> list[KeyComparison]:
+        
         comparisons: list[KeyComparison] = []
 
         for sql_table, json_collection in self.SQL_TO_JSON_ENTITY_KEY_MAP.items():
             sql_keys = {
                 row.get("id")
-                for row in self.sql_tables.get(sql_table, [])
+                for row in sql_tables.get(sql_table, [])
                 if row.get("id")
             }
 
             json_keys = {
                 row.get("id")
-                for row in self.json_collections.get(json_collection, [])
+                for row in json_collections.get(json_collection, [])
                 if row.get("id")
             }
 
             comparisons.append(
                 self.compare_key_sets(
-                    name=f"keys:{sql_table}~{json_collection}",
+                    name=f"{name_prefix}:{sql_table}~{json_collection}",
                     sql_keys=sql_keys,
                     json_keys=json_keys,
                 )
             )
 
         return comparisons
+
+    
+    def compare_entity_keys(self) -> list[KeyComparison]:
+        return self.compare_entity_keys_for_sources(
+            sql_tables=self.sql_tables,
+            json_collections=self.json_collections,
+            name_prefix="keys",
+        )
+
+    def compare_conversion_cast_keys_for_sources(
+        self,
+        *,
+        sql_tables: dict[str, list[dict[str, Any]]],
+        json_collections: dict[str, list[dict[str, Any]]],
+        name_prefix: str = "keys",) -> KeyComparison:
+        sql_keys = {
+            self.sql_conversion_cast_key(row)
+            for row in sql_tables.get("conversion_cast", [])
+        }
+
+        json_keys = set()
+
+        for row in json_collections.get("conversions", []):
+            json_keys.add(self.json_conversion_key(row))
+
+        for row in json_collections.get("casts", []):
+            json_keys.add(self.json_cast_key(row))
+
+        return self.compare_key_sets(
+            name=f"{name_prefix}:conversion_cast~conversions+casts",
+            sql_keys=sql_keys,
+            json_keys=json_keys,
+        )
+
+    def compare_conversion_cast_keys(self) -> KeyComparison:
+        return self.compare_conversion_cast_keys_for_sources(
+            sql_tables=self.sql_tables,
+            json_collections=self.json_collections,
+            name_prefix="keys",
+        )
 
     def compare_conversion_cast_keys(self) -> KeyComparison:
         sql_keys = {
@@ -834,7 +1046,6 @@ class MlayerSourceAuditor:
     # -------------------------------------------------------------------------
     # Warnings
     # -------------------------------------------------------------------------
-
     def collect_warnings(self, report: SourceAuditReport) -> list[str]:
         warnings: list[str] = []
 
@@ -848,6 +1059,19 @@ class MlayerSourceAuditor:
             warnings.append(
                 f"JSON conversions/casts have "
                 f"{report.json_conversion_cast.duplicate_semantic_keys} duplicate semantic keys"
+            )
+
+        if report.filtered_sql_conversion_cast.duplicate_semantic_keys:
+            warnings.append(
+                f"Filtered SQL conversion_cast has "
+                f"{report.filtered_sql_conversion_cast.duplicate_semantic_keys} duplicate semantic keys"
+            )
+
+        if report.sql_conversion_cast_filter.removed_count:
+            warnings.append(
+                "SQL conversion_cast filter removed "
+                f"{report.sql_conversion_cast_filter.removed_count} rows "
+                "where aspect is AS1 or scale is SC1018"
             )
 
         for comparison in report.count_comparisons:
@@ -865,7 +1089,23 @@ class MlayerSourceAuditor:
                     f"only_json={comparison.only_json_count}"
                 )
 
+        for comparison in report.filtered_count_comparisons:
+            if comparison.only_sql_count or comparison.only_json_count:
+                warnings.append(
+                    f"Filtered count mismatch for {comparison.name}: "
+                    f"sql={comparison.sql_count}, json={comparison.json_count}"
+                )
+
+        for comparison in report.filtered_key_comparisons:
+            if comparison.only_sql_count or comparison.only_json_count:
+                warnings.append(
+                    f"Filtered key mismatch for {comparison.name}: "
+                    f"only_sql={comparison.only_sql_count}, "
+                    f"only_json={comparison.only_json_count}"
+                )
+
         return warnings
+
 
     # -------------------------------------------------------------------------
     # Basic coercion
@@ -916,7 +1156,7 @@ class ReportPrinter:
         self.print_source_summary("JSON collections", report.json_collections)
 
         self.print_conversion_cast_summary(
-            "SQL conversion_cast",
+            "SQL conversion_cast before filter",
             report.sql_conversion_cast,
         )
 
@@ -925,9 +1165,42 @@ class ReportPrinter:
             report.json_conversion_cast,
         )
 
-        self.print_comparisons("Count comparisons", report.count_comparisons)
-        self.print_comparisons("Key comparisons", report.key_comparisons)
+        self.print_sql_conversion_cast_filter_summary(
+            report.sql_conversion_cast_filter
+        )
+
+        self.print_source_summary(
+            "Filtered SQL dump tables",
+            report.filtered_sql_tables,
+        )
+
+        self.print_conversion_cast_summary(
+            "SQL conversion_cast after filter",
+            report.filtered_sql_conversion_cast,
+        )
+
+        self.print_comparisons(
+            "Count comparisons before SQL filter",
+            report.count_comparisons,
+        )
+
+        self.print_comparisons(
+            "Key comparisons before SQL filter",
+            report.key_comparisons,
+        )
+
+        self.print_comparisons(
+            "Count comparisons after SQL filter",
+            report.filtered_count_comparisons,
+        )
+
+        self.print_comparisons(
+            "Key comparisons after SQL filter",
+            report.filtered_key_comparisons,
+        )
+
         self.print_warnings(report.warnings)
+
 
     def print_source_summary(
         self,
@@ -965,6 +1238,33 @@ class ReportPrinter:
                 for row in summary.sample_rows[: self.sample_limit]:
                     print(f"    {row}")
 
+    
+    def print_sql_conversion_cast_filter_summary(
+        self,
+        summary: SqlConversionCastFilterSummary,
+    ) -> None:
+        print()
+        print("=" * 80)
+        print("SQL conversion_cast filter summary")
+        print("=" * 80)
+
+        if summary.original_count == 0 and summary.filtered_count == 0:
+            print("No SQL conversion_cast filter was applied.")
+            return
+
+        print(f"original rows: {summary.original_count}")
+        print(f"filtered rows: {summary.filtered_count}")
+        print(f"removed rows:  {summary.removed_count}")
+
+        if summary.filter_reason_counts:
+            print("filter reasons:")
+            for reason, count in sorted(summary.filter_reason_counts.items()):
+                print(f"  {reason}: {count}")
+
+        if self.show_samples and summary.removed_sample:
+            print("removed sample rows:")
+            for row in summary.removed_sample[: self.sample_limit]:
+                print(f"  {row}")
     @staticmethod
     def print_conversion_cast_summary(
         title: str,
@@ -1021,6 +1321,7 @@ class ReportPrinter:
 
             if comparison.only_json_sample:
                 print(f"  only JSON sample: {comparison.only_json_sample}")
+
 
     @staticmethod
     def print_warnings(warnings: list[str]) -> None:
