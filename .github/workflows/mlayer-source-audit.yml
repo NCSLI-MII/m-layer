@@ -1,0 +1,252 @@
+name: M-Layer source audit
+
+on:
+  pull_request:
+    paths:
+      - "source/**"
+      - "tools/**"
+      - ".github/workflows/mlayer-source-audit.yml"
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+    paths:
+      - "source/**"
+      - "tools/**"
+      - ".github/workflows/mlayer-source-audit.yml"
+  workflow_dispatch:
+    inputs:
+      sql_dump_path:
+        description: "Path to PostgreSQL plain-text dump"
+        required: false
+        default: "source/sqldata/m_layer_current.dmp"
+      json_dir:
+        description: "Path to JSON source directory"
+        required: false
+        default: "source/json"
+      include_samples:
+        description: "Include sample rows and key samples in the text report"
+        required: false
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  audit:
+    name: Generate M-Layer source audit report
+    runs-on: ubuntu-latest
+
+    env:
+      DEFAULT_SQL_DUMP_PATH: source/sqldump/m_layer.dmp
+      DEFAULT_JSON_DIR: source/json
+      REPORT_DIR: reports
+      TEXT_REPORT_PATH: reports/mlayer_source_audit.txt
+      JSON_REPORT_PATH: reports/mlayer_source_audit.json
+      SUMMARY_REPORT_PATH: reports/mlayer_source_audit_summary.md
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Resolve audit inputs
+        id: inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          SQL_DUMP_PATH="${{ github.event.inputs.sql_dump_path || '' }}"
+          JSON_DIR="${{ github.event.inputs.json_dir || '' }}"
+          INCLUDE_SAMPLES="${{ github.event.inputs.include_samples || '' }}"
+
+          if [ -z "$SQL_DUMP_PATH" ]; then
+            SQL_DUMP_PATH="$DEFAULT_SQL_DUMP_PATH"
+          fi
+
+          if [ -z "$JSON_DIR" ]; then
+            JSON_DIR="$DEFAULT_JSON_DIR"
+          fi
+
+          if [ -z "$INCLUDE_SAMPLES" ]; then
+            INCLUDE_SAMPLES="true"
+          fi
+
+          echo "sql_dump_path=$SQL_DUMP_PATH" >> "$GITHUB_OUTPUT"
+          echo "json_dir=$JSON_DIR" >> "$GITHUB_OUTPUT"
+          echo "include_samples=$INCLUDE_SAMPLES" >> "$GITHUB_OUTPUT"
+
+          echo "SQL dump path: $SQL_DUMP_PATH"
+          echo "JSON directory: $JSON_DIR"
+          echo "Include samples: $INCLUDE_SAMPLES"
+
+      - name: Validate expected source paths
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          SQL_DUMP_PATH="${{ steps.inputs.outputs.sql_dump_path }}"
+          JSON_DIR="${{ steps.inputs.outputs.json_dir }}"
+
+          if [ ! -f "$SQL_DUMP_PATH" ]; then
+            echo "::error::SQL dump file not found: $SQL_DUMP_PATH"
+            echo "Expected a PostgreSQL plain-text pg_dump file under source/sqldata."
+            exit 1
+          fi
+
+          if [ ! -d "$JSON_DIR" ]; then
+            echo "::error::JSON source directory not found: $JSON_DIR"
+            echo "Expected JSON source files under source/json."
+            exit 1
+          fi
+
+          echo "Found SQL dump: $SQL_DUMP_PATH"
+          echo "Found JSON directory: $JSON_DIR"
+
+      - name: Generate audit reports
+        id: audit
+        shell: bash
+        continue-on-error: true
+        run: |
+          set -o pipefail
+
+          mkdir -p "$REPORT_DIR"
+
+          SQL_DUMP_PATH="${{ steps.inputs.outputs.sql_dump_path }}"
+          JSON_DIR="${{ steps.inputs.outputs.json_dir }}"
+          INCLUDE_SAMPLES="${{ steps.inputs.outputs.include_samples }}"
+
+          AUDIT_ARGS=(
+            --dump "$SQL_DUMP_PATH"
+            --json-dir "$JSON_DIR"
+            --json-report "$JSON_REPORT_PATH"
+            --filter-sql-conversion-cast
+            --show-null-counts
+            --show-distinct-counts
+            --log-level INFO
+          )
+
+          if [ "$INCLUDE_SAMPLES" = "true" ]; then
+            AUDIT_ARGS+=(--show-samples)
+          fi
+
+          echo "Running auditor..."
+          echo "python tools/summarize_mlayer_sources.py ${AUDIT_ARGS[*]}"
+
+          python summarize_mlayer_sources.py "${AUDIT_ARGS[@]}" \
+            2>&1 | tee "$TEXT_REPORT_PATH"
+
+          AUDIT_EXIT_CODE="${PIPESTATUS[0]}"
+
+          echo "exit_code=$AUDIT_EXIT_CODE" >> "$GITHUB_OUTPUT"
+
+          if [ "$AUDIT_EXIT_CODE" -eq 0 ]; then
+            echo "Auditor completed with no warnings."
+          else
+            echo "Auditor completed with warnings or differences. Exit code: $AUDIT_EXIT_CODE"
+          fi
+
+          exit 0
+
+      - name: Build Markdown summary for release notes
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          SQL_DUMP_PATH="${{ steps.inputs.outputs.sql_dump_path }}"
+          JSON_DIR="${{ steps.inputs.outputs.json_dir }}"
+          AUDIT_EXIT_CODE="${{ steps.audit.outputs.exit_code || 'unknown' }}"
+
+          {
+            echo "# M-Layer source audit summary"
+            echo
+            echo "Generated by GitHub Actions."
+            echo
+            echo "## Inputs"
+            echo
+            echo "- SQL dump: \`$SQL_DUMP_PATH\`"
+            echo "- JSON directory: \`$JSON_DIR\`"
+            echo "- Auditor exit code: \`$AUDIT_EXIT_CODE\`"
+            echo "- Commit: \`${GITHUB_SHA}\`"
+            echo "- Workflow run: \`${GITHUB_RUN_ID}\`"
+            echo
+            echo "## Interpretation"
+            echo
+            if [ "$AUDIT_EXIT_CODE" = "0" ]; then
+              echo "The auditor completed without warnings."
+            elif [ "$AUDIT_EXIT_CODE" = "unknown" ]; then
+              echo "The auditor exit code was not captured."
+            else
+              echo "The auditor reported warnings or differences. Review the details below before using this summary in release notes."
+            fi
+            echo
+            echo "## Auditor output"
+            echo
+            echo '```text'
+            if [ -f "$TEXT_REPORT_PATH" ]; then
+              cat "$TEXT_REPORT_PATH"
+            else
+              echo "Text audit report was not generated."
+            fi
+            echo '```'
+          } > "$SUMMARY_REPORT_PATH"
+
+      - name: Add audit summary to workflow summary
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [ -f "$SUMMARY_REPORT_PATH" ]; then
+            cat "$SUMMARY_REPORT_PATH" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "M-Layer source audit summary was not generated." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload audit reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: mlayer-source-audit-reports
+          path: |
+            reports/mlayer_source_audit.txt
+            reports/mlayer_source_audit.json
+            reports/mlayer_source_audit_summary.md
+          if-no-files-found: warn
+
+      - name: Fail if required report files were not generated
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          missing=0
+
+          for path in "$TEXT_REPORT_PATH" "$JSON_REPORT_PATH" "$SUMMARY_REPORT_PATH"; do
+            if [ ! -f "$path" ]; then
+              echo "::error::Missing expected report file: $path"
+              missing=1
+            fi
+          done
+
+          exit "$missing"
+
+      - name: Report auditor warning status
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          AUDIT_EXIT_CODE="${{ steps.audit.outputs.exit_code || 'unknown' }}"
+
+          if [ "$AUDIT_EXIT_CODE" = "0" ]; then
+            echo "Auditor completed with no warnings."
+            exit 0
+          fi
+
+          echo "::warning::Auditor completed with warnings or differences. Review uploaded audit reports before release."
+          exit 0
+
