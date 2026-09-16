@@ -196,6 +196,7 @@ class MLayerApiExtractConfig:
             CollectionConfig("scaletypes", "/scaletypes", "scaletypes.json"),
             CollectionConfig("conversions", "/conversions", "conversions.json"),
             CollectionConfig("casts", "/casts", "casts.json"),
+            CollectionConfig("references", "/references", "references.json")
         ]
     )
 

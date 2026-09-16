@@ -294,6 +294,7 @@ class JsonSourceParser:
         functions.json
         conversions.json
         casts.json
+        references.json
 
     Each file may contain:
         [...]
@@ -317,6 +318,7 @@ class JsonSourceParser:
         "functions": "functions.json",
         "conversions": "conversions.json",
         "casts": "casts.json",
+        "references": "references.json"
     }
 
     def __init__(
@@ -389,7 +391,7 @@ class MlayerSourceAuditor:
         "function": "functions",
         "aspect_scale": None,
         "conversion_cast": None,
-        "reference": None,
+        "reference": "references",
     }
 
     SQL_TO_JSON_ENTITY_KEY_MAP = {
@@ -400,6 +402,7 @@ class MlayerSourceAuditor:
         "unit": "units",
         "scale": "scales",
         "function": "functions",
+        "reference": "references"
     }
 
     def __init__(
