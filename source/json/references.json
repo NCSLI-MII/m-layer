@@ -1,0 +1,60 @@
+[
+  {
+    "id": "RF1",
+    "name": "zero degrees Celsius",
+    "sources": [
+      "https://www.bipm.org/en/si-brochure-9"
+    ],
+    "symbol": "(0_deg_C)"
+  },
+  {
+    "id": "RF2",
+    "name": "one turn",
+    "sources": [],
+    "symbol": "(1_turn)"
+  },
+  {
+    "id": "RF3",
+    "name": "positive half turn",
+    "sources": [],
+    "symbol": "(1/2_turn)"
+  },
+  {
+    "id": "RF4",
+    "name": "negative half turn",
+    "sources": [],
+    "symbol": "(-1/2_turn)"
+  },
+  {
+    "id": "RF5",
+    "name": "zero turn",
+    "sources": [],
+    "symbol": "(0_turn)"
+  },
+  {
+    "id": "RF6",
+    "name": "zero degress Fahrenheit",
+    "sources": [],
+    "symbol": "(0_deg_F)"
+  },
+  {
+    "id": "RF7",
+    "name": "zero decibel-milliwatt",
+    "sources": [],
+    "symbol": "(0_dBm)"
+  },
+  {
+    "id": "RF8",
+    "name": "zero pH",
+    "sources": [
+      "https://goldbook.iupac.org/terms/view/P04524"
+    ],
+    "symbol": "(0_pH)"
+  },
+  {
+    "id": "RF9",
+    "name": "zero decibel-watt",
+    "sources": [],
+    "symbol": "(0_dBW)"
+  }
+]
