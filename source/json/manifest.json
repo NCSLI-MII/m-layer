@@ -9,6 +9,15 @@
       "skipped_write": true,
       "status_code": 200
     },
+    "aspectscales": {
+      "changed": true,
+      "endpoint": "//aspectscales",
+      "file": "aspectscales.json",
+      "row_count": 2084,
+      "sha256": "594ca3bb672ed1c51b5439cfd13080d3abd81ee8d8492f7f31b8b2d3ee89a141",
+      "skipped_write": false,
+      "status_code": 200
+    },
     "casts": {
       "changed": false,
       "endpoint": "/casts",
@@ -92,15 +101,17 @@
     }
   },
   "dataset_name": "mlayer",
-  "generated_at_utc": "2026-09-16T17:46:27+00:00",
+  "generated_at_utc": "2026-10-16T13:42:48+00:00",
   "source": {
     "base_url": "https://api.mlayer.org",
     "type": "api"
   },
   "summary": {
-    "changed_files": [],
-    "collection_count": 10,
-    "total_rows": 10234
+    "changed_files": [
+      "source/json/aspectscales.json"
+    ],
+    "collection_count": 11,
+    "total_rows": 12318
   },
   "tool": {
     "name": "mlayer-api-extractor",
