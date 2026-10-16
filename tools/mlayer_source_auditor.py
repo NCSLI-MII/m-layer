@@ -318,7 +318,8 @@ class JsonSourceParser:
         "functions": "functions.json",
         "conversions": "conversions.json",
         "casts": "casts.json",
-        "references": "references.json"
+        "references": "references.json",
+        "aspectscales": "aspectscales.json"
     }
 
     def __init__(
@@ -389,7 +390,7 @@ class MlayerSourceAuditor:
         "unit": "units",
         "scale": "scales",
         "function": "functions",
-        "aspect_scale": None,
+        "aspect_scale": "aspectscales",
         "conversion_cast": None,
         "reference": "references",
     }
@@ -488,6 +489,14 @@ class MlayerSourceAuditor:
                     name_prefix="keys",
                 )
             )
+            report.key_comparisons.append(
+                self.compare_aspect_scale_keys_for_sources(
+                    sql_tables=self.sql_tables,
+                    json_collections=self.json_collections,
+                    name_prefix="keys",
+                )
+            )
+
 
             # After filter: filtered SQL vs JSON.
             if self.apply_sql_conversion_cast_filter:
@@ -505,6 +514,13 @@ class MlayerSourceAuditor:
 
                 report.filtered_key_comparisons.append(
                     self.compare_conversion_cast_keys_for_sources(
+                        sql_tables=self.filtered_sql_tables,
+                        json_collections=self.json_collections,
+                        name_prefix="filtered_keys",
+                    )
+                )
+                report.filtered_key_comparisons.append(
+                    self.compare_aspect_scale_keys_for_sources(
                         sql_tables=self.filtered_sql_tables,
                         json_collections=self.json_collections,
                         name_prefix="filtered_keys",
@@ -1012,6 +1028,40 @@ class MlayerSourceAuditor:
             row.get("dst_aspect_id"),
             row.get("function_id") or row.get("transform_id"),
             cls.normalise_parameters(row.get("parameters")),
+        )
+    @classmethod
+    def aspect_scale_key(cls, row: dict[str, Any]) -> tuple[Any, ...]:
+        """
+        Composite semantic key for aspect_scale rows.
+        Both SQL (aspect_scale) and JSON (aspectscales) rows share
+        the same (aspect_id, scale_id) natural key.
+        """
+        return (
+            row.get("aspect_id"),
+            row.get("scale_id"),
+        )
+
+    def compare_aspect_scale_keys_for_sources(
+        self,
+        *,
+        sql_tables: dict[str, list[dict[str, Any]]],
+        json_collections: dict[str, list[dict[str, Any]]],
+        name_prefix: str = "keys",
+    ) -> KeyComparison:
+        sql_keys = {
+            self.aspect_scale_key(row)
+            for row in sql_tables.get("aspect_scale", [])
+        }
+
+        json_keys = {
+            self.aspect_scale_key(row)
+            for row in json_collections.get("aspectscales", [])
+        }
+
+        return self.compare_key_sets(
+            name=f"{name_prefix}:aspect_scale~aspectscales",
+            sql_keys=sql_keys,
+            json_keys=json_keys,
         )
 
     @staticmethod

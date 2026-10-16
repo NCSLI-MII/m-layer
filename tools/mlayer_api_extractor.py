@@ -182,7 +182,7 @@ class MLayerApiExtractConfig:
     skip_unchanged: bool = True
     sort_rows: bool = True
 
-    user_agent: str = "mlayer-api-extractor/1.0"
+    user_agent: str = "mlayer-api-extractor/1.1"
 
     collection_configs: list[CollectionConfig] = field(
         default_factory=lambda: [
@@ -196,7 +196,8 @@ class MLayerApiExtractConfig:
             CollectionConfig("scaletypes", "/scaletypes", "scaletypes.json"),
             CollectionConfig("conversions", "/conversions", "conversions.json"),
             CollectionConfig("casts", "/casts", "casts.json"),
-            CollectionConfig("references", "/references", "references.json")
+            CollectionConfig("references", "/references", "references.json"),
+            CollectionConfig("aspectscales","//aspectscales","aspectscales.json")
         ]
     )
 
@@ -218,7 +219,7 @@ class MLayerApiClient:
         token: str | None = None,
         timeout_seconds: int = 30,
         retries: int = 3,
-        user_agent: str = "mlayer-api-extractor/1.0",
+        user_agent: str = "mlayer-api-extractor/1.1",
         logger: logging.Logger | None = None,
     ) -> None:
         self.base_url = base_url.rstrip("/")
@@ -606,7 +607,13 @@ class MLayerApiExtractor:
                 str(row.get("function_id", "")),
                 json.dumps(row.get("parameters", ""), sort_keys=True, default=str),
             )
-
+        if collection_name == "aspectscales":
+            return (
+                str(row.get("aspect_id", "")),
+                str(row.get("scale_id", "")),
+                str(row.get("name", "") or ""),
+                str(row.get("symbol", "") or ""),
+            )
         return (
             str(row.get("id", "")),
             str(row.get("ml_name", "")),
